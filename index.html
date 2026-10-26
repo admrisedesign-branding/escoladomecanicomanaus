@@ -9,19 +9,19 @@
 <meta property="og:title" content="Escola do Mecânico Manaus — Sua carreira na mecânica começa aqui">
 <meta property="og:description" content="Cursos de mecânica automotiva, moto e diesel em Manaus. Aprenda fazendo, com aula experimental.">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#0B2016">
+<meta name="theme-color" content="#F5F8F1">
 <link rel="icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0B2016; --bg-2:#0F2E1F; --bg-3:#143A27; --card-d:#14301F;
-  --green:#8DC63F; --green-deep:#2E7D3A; --green-glow:rgba(141,198,63,.22);
+  --bg:#0F3320; --bg-2:#14412A; --bg-3:#143A27; --card-d:#17492E;
+  --green:#8DC63F; --green-deep:#21602F; --green-glow:rgba(141,198,63,.22);
   --lime:#B8E04C;
-  --paper:#F4F8F5; --white:#fff; --ink:#0B1A12; --ink-2:#3C4D43; --ink-3:#6B7C72;
+  --paper:#F5F8F1; --white:#fff; --ink:#0E1A12; --ink-2:#3C4D43; --ink-3:#6B7C72;
   --line-l:#DCE6DF; --line-d:rgba(255,255,255,.1);
-  --r:18px; --max:1160px;
+  --brand:#21602F; --brand-2:#2E8B45; --r:18px; --max:1160px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -40,48 +40,83 @@ img,video{max-width:100%;display:block}
 .dark .tag{color:var(--green)}
 
 /* topbar + nav */
-.topbar{background:var(--green);color:#0B2016;text-align:center;font:600 13px/1.3 Inter;padding:9px 40px 9px 16px;position:relative}
-.topbar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:18px;cursor:pointer;color:#0B2016}
-nav{position:sticky;top:0;z-index:50;background:rgba(11,32,22,.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.2s}
-nav.scrolled{background:rgba(11,32,22,.92);border-color:var(--line-d)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
-.brand{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font:800 17px/1 Sora}
-.brand i{width:34px;height:34px;border-radius:10px;background:var(--green);display:grid;place-items:center;color:#0B2016;font-style:normal;font-size:18px}
-.brand small{display:block;font:500 11px/1 Inter;color:var(--green);letter-spacing:.08em;margin-top:3px}
+.btn-brand{background:var(--brand);color:#fff}
+.btn-brand:hover{transform:translateY(-2px);background:#1A4F27;box-shadow:0 10px 26px rgba(33,96,47,.3)}
+.topbar{background:var(--brand);color:#fff;text-align:center;font:600 13px/1.3 Inter;padding:9px 40px 9px 16px;position:relative}
+.topbar a{color:var(--lime)}
+.topbar button{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:18px;cursor:pointer;color:#fff}
+nav{position:sticky;top:12px;z-index:50;margin-top:12px;padding:0 14px}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:999px;box-shadow:0 10px 40px rgba(20,60,30,.12);padding:0 10px 0 22px;max-width:var(--max);margin:0 auto}
+nav.scrolled .nav-in{box-shadow:0 14px 44px rgba(20,60,30,.2)}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);text-decoration:none;font:800 17px/1 Sora,Inter,system-ui,sans-serif}
+.brand i{width:34px;height:34px;border-radius:10px;background:var(--brand);display:grid;place-items:center;color:#fff;font-style:normal;font-size:18px}
+.brand small{display:block;font:600 10.5px/1 Inter;color:var(--green-deep);letter-spacing:.1em;margin-top:4px}
 .nav-links{display:flex;gap:26px;align-items:center}
-.nav-links a{color:#D3E4D2;text-decoration:none;font-size:14px;font-weight:500}
-.nav-links a:hover{color:var(--green)}
-.nav-links .btn{padding:11px 20px;font-size:14px;color:#0B2016}
-@media(max-width:820px){.nav-links a:not(.btn){display:none}}
+.nav-links a{color:var(--ink-2);text-decoration:none;font-size:14px;font-weight:500}
+.nav-links a:hover{color:var(--brand)}
+.nav-links .btn{padding:14px 24px;font-size:14px;color:#fff;white-space:nowrap}
+@media(max-width:820px){.nav-links a:not(.btn){display:none}.nav-in{padding-left:16px}.brand small{display:none}}
 
-/* hero */
-.hero{position:relative;overflow:hidden;color:#fff;background:var(--bg);margin-top:-68px;padding-top:68px;min-height:92vh;display:flex;align-items:center}
-.hero-media{position:absolute;inset:0;z-index:0}
-.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-media::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 30%,rgba(141,198,63,.22),transparent 60%),linear-gradient(180deg,#0B2016 0%,#123826 100%)}
-.hero-media.has-video::before{display:none}
-.hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(11,32,22,.92) 0%,rgba(11,32,22,.7) 48%,rgba(11,32,22,.35) 100%),linear-gradient(0deg,rgba(11,32,22,.9),transparent 35%)}
-.hero-grid{position:absolute;inset:0;z-index:1;opacity:.35;background-image:linear-gradient(var(--line-d) 1px,transparent 1px),linear-gradient(90deg,var(--line-d) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%)}
-.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:70px 20px 90px}
-.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-d);background:rgba(255,255,255,.05);padding:8px 14px;border-radius:999px;font:500 13px/1 Inter;color:#D3E4D2;margin-bottom:22px}
-.pill b{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 4px var(--green-glow);animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(141,198,63,0)}}
-.hero h1{font-size:clamp(36px,6vw,64px);font-weight:800}
-.hero h1 em{font-style:normal;color:var(--green)}
-.hero p.sub{margin:22px 0 28px;font-size:clamp(16px,2vw,19px);color:#BFD3BF;max-width:560px}
-.selos{display:flex;flex-wrap:wrap;gap:10px 20px;font-size:14px;color:#D3E4D2}
-.selos span::before{content:"✓";color:var(--green);font-weight:800;margin-right:7px}
-.mini{background:rgba(14,38,25,.72);border:1px solid var(--line-d);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:24px;padding:26px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.mini h3{font-size:21px;margin-bottom:4px}
-.mini p{font-size:14px;color:#A3BBA3;margin-bottom:18px}
+/* hero claro + arte animada */
+.hero{position:relative;overflow:hidden;margin-top:-92px;padding-top:92px;background:linear-gradient(180deg,#FCFDFA 0%,#F1F6EC 100%);min-height:max(660px,min(56.3vw,1013px))}
+.hero-art{position:absolute;top:0;left:0;right:0;pointer-events:none;overflow:hidden}
+.art-stage{position:relative;height:auto;width:100%;max-width:1800px;aspect-ratio:1672/941;margin-left:auto;will-change:transform;transition:transform .5s cubic-bezier(.2,.7,.2,1);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 9%);mask-image:linear-gradient(90deg,transparent 0,#000 9%)}
+.kb{position:absolute;inset:0;transform-origin:68% 55%;animation:kb 26s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1.02) translate3d(0,0,0)}to{transform:scale(1.085) translate3d(-1.2%,-.8%,0)}}
+.kb img,.kb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.kb video{opacity:0;transition:opacity .8s}
+.art-stage.has-video video{opacity:1}
+.art-stage.has-video .fx{display:none}
+.fx{position:absolute;border-radius:50%;pointer-events:none}
+.fx.garage{left:54.5%;top:42%;width:11%;aspect-ratio:1.2;background:radial-gradient(closest-side,rgba(255,206,120,.75),rgba(255,206,120,0) 70%);mix-blend-mode:screen;animation:glow 3.4s ease-in-out infinite}
+.fx.tail{left:85.4%;top:77.4%;width:3.2%;aspect-ratio:2.4;background:radial-gradient(closest-side,rgba(255,40,40,.95),rgba(255,40,40,0) 72%);animation:blink 2.6s ease-in-out infinite}
+.fx.tail2{left:90.6%;top:77.4%;width:3.2%;aspect-ratio:2.4;background:radial-gradient(closest-side,rgba(255,40,40,.95),rgba(255,40,40,0) 72%);animation:blink 2.6s ease-in-out infinite}
+.fx.screen{left:60.4%;top:57.4%;width:3.6%;aspect-ratio:1.6;background:radial-gradient(closest-side,rgba(120,255,170,.8),rgba(120,255,170,0) 70%);mix-blend-mode:screen;animation:glow 2.1s ease-in-out infinite .6s}
+.fx.cloud{inset:-10% -30%;border-radius:0;background:linear-gradient(105deg,transparent 38%,rgba(70,110,70,.10) 50%,transparent 62%);mix-blend-mode:multiply;animation:cloud 14s linear infinite}
+@keyframes glow{0%,100%{opacity:.25}50%{opacity:.95}}
+@keyframes blink{0%,100%{opacity:.15}45%,55%{opacity:1}}
+@keyframes cloud{from{transform:translateX(-40%)}to{transform:translateX(40%)}}
+.vchip{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:16px;padding:12px 18px;font:600 15px Inter;box-shadow:0 16px 36px rgba(20,60,30,.22);animation:bob 5s ease-in-out infinite}
+.vchip b{width:30px;height:30px;border-radius:9px;background:#E6F1D8;display:grid;place-items:center;font-size:16px}
+.vchip.c1{right:3.5%;top:46%;--r:5deg}
+.vchip.c2{right:1.5%;top:57%;--r:5deg;animation-delay:-1.6s}
+.vchip.c3{right:4%;top:68%;--r:5deg;animation-delay:-3.2s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(5deg)}50%{transform:translateY(-9px) rotate(5deg)}}
+.hero-in{position:relative;z-index:2;display:block;padding:56px 20px 76px}
+.hero-copy{max-width:520px}
+.eyebrow{display:block;font:600 12px/1.4 Inter;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3);margin-bottom:18px}
+.hero h1{font-size:clamp(36px,4.4vw,58px);font-weight:800;color:var(--ink)}
+.hero h1 em{font-style:normal;color:var(--brand-2)}
+.hero p.sub{margin:22px 0 28px;font-size:clamp(16px,2vw,18px);color:var(--ink-2);max-width:520px}
+.pillbar{display:flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:8px 8px 8px 22px;box-shadow:0 14px 44px rgba(20,60,30,.14);max-width:540px}
+.pillbar .pin{font-size:20px}
+.pillbar select{flex:1;min-width:0;border:0;outline:0;background:transparent;font:500 16px Inter,sans-serif;color:var(--ink);appearance:none;-webkit-appearance:none;padding:12px 0;cursor:pointer}
+.pillbar .btn{white-space:nowrap;padding:16px 26px}
+.hint{margin:12px 0 0 22px;font-size:13px;color:var(--ink-3)}
+.statsband{position:relative;z-index:3;margin-top:-46px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);background:#fff;border-radius:24px;padding:22px 12px;box-shadow:0 20px 60px rgba(20,60,30,.16)}
+.hs{padding:0 24px;border-left:1px solid var(--line-l)}
+.hs:first-child{border:0}
+.hs i{font-style:normal;font-size:22px;display:block;margin-bottom:6px}
+.hs b{display:block;font:800 22px/1.1 Sora,Inter,sans-serif;color:var(--ink)}
+.hs span{font-size:12.5px;color:var(--ink-3);line-height:1.3;display:block;margin-top:2px}
 .f{display:block;margin-bottom:12px}
 .f span{display:block;font:500 12px/1 Inter;color:#A3BBA3;margin-bottom:6px}
-.f input,.f select{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--line-d);color:#fff;border-radius:12px;padding:14px;font:500 16px/1.2 Inter;outline:none;appearance:none;-webkit-appearance:none}
+.f input,.f select{width:100%;background:rgba(255,255,255,.07);border:1px solid var(--line-d);color:#fff;border-radius:12px;padding:14px;font:500 16px/1.2 Inter;outline:none;appearance:none;-webkit-appearance:none}
 .f select option{color:#000}
 .f input:focus,.f select:focus{border-color:var(--green);box-shadow:0 0 0 3px var(--green-glow)}
-.mini .btn{width:100%;margin-top:6px}
-.mini small{display:block;text-align:center;margin-top:10px;font-size:12px;color:#7F9A8C}
-@media(max-width:900px){.hero{min-height:auto}.hero-in{grid-template-columns:1fr;padding:50px 20px 60px;gap:32px}}
+@media(max-width:900px){
+  .hero{display:flex;flex-direction:column;min-height:0}
+  .hero-in{order:1;padding:34px 20px 8px}
+  .hero-art{order:2;position:relative;overflow:hidden;aspect-ratio:4/3;margin-top:8px}
+  .art-stage{height:auto;width:158%;max-width:none;margin-left:-58%;margin-top:-2%;-webkit-mask-image:none;mask-image:none}
+  .vchip{display:none}
+  .statsband{margin-top:-30px}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:18px 0;padding:20px 8px}
+  .hs:nth-child(3){border:0}
+}
+@media(max-width:480px){.nav-links .btn{padding:12px 16px}.pillbar .pin{display:none}.pillbar{flex-direction:column;align-items:stretch;border-radius:26px;padding:14px}.pillbar select{padding:8px 4px}.pillbar .btn{width:100%}.hint{margin-left:6px}}
+@media(prefers-reduced-motion:reduce){.kb,.fx,.vchip{animation:none!important}}
 
 /* numbers */
 .numbers{background:var(--bg-2);color:#fff;border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
@@ -208,50 +243,55 @@ footer a{color:#A3BBA3}
       <a href="#cursos">Cursos</a>
       <a href="#pais">Para pais</a>
       <a href="#faq">Dúvidas</a>
-      <a href="#form" class="btn btn-green" onclick="abrirFunil('nav');return false;">Quero conhecer</a>
+      <a href="#form" class="btn btn-brand" onclick="abrirFunil('nav');return false;">Matricule-se →</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="hero-media" id="heroMedia">
-    <!-- Coloque o vídeo da oficina em assets/hero.mp4 (até ~2 MB, 10–15 s, sem áudio) e a imagem em assets/hero-poster.jpg -->
-    <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" id="heroVideo">
-      <source src="assets/hero.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="hero-shade"></div><div class="hero-grid"></div>
-  <div class="wrap hero-in">
-    <div>
-      <div class="pill"><b></b> Turmas abertas em Manaus · a partir de 14 anos</div>
-      <h1>Sua carreira na mecânica <em>começa aqui</em>, em Manaus.</h1>
-      <p class="sub">Aprenda na prática, com as mãos no motor. Carro, moto ou diesel: saia com habilidade de verdade e um caminho até o mercado — do carro elétrico ao híbrido, a mecânica do futuro precisa de gente que sabe.</p>
-      <div class="selos"><span>Aula experimental</span><span>Parcelas que cabem no bolso</span><span>Banco de vagas Emprega Mecânico</span></div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="art-stage" id="heroMedia">
+      <div class="kb">
+        <img src="assets/hero-art.webp" srcset="assets/hero-art-sm.webp 900w, assets/hero-art.webp 1672w" sizes="100vw" alt="" width="1672" height="941" fetchpriority="high" decoding="async">
+        <!-- Opcional: vídeo gerado a partir desta arte em assets/hero.mp4 (mesmo enquadramento 16:9). Quando existir, ele aparece sobre a imagem. -->
+        <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-art.webp" id="heroVideo"><source src="assets/hero.mp4" type="video/mp4"></video>
+        <i class="fx cloud"></i><i class="fx garage"></i><i class="fx screen"></i><i class="fx tail"></i><i class="fx tail2"></i>
+      </div>
+      <div class="vchip c1"><b>🔧</b>Prática</div>
+      <div class="vchip c2"><b>⚙️</b>Tecnologia</div>
+      <div class="vchip c3"><b>📈</b>Profissão</div>
     </div>
-    <form class="mini" onsubmit="submitMiniForm();return false;">
-      <h3>Quero conhecer a escola</h3>
-      <p>Leva 30 segundos. A gente chama no WhatsApp.</p>
-      <label class="f"><span>Seu nome</span><input id="heroNome" autocomplete="name" placeholder="Como podemos te chamar?"></label>
-      <label class="f"><span>WhatsApp</span><input id="heroWhats" type="tel" inputmode="tel" autocomplete="tel" placeholder="(92) 9 0000-0000"></label>
-      <label class="f"><span>O que você quer aprender?</span>
-        <select id="heroCurso">
-          <option value="">Ainda não sei — me ajudem</option>
+  </div>
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <span class="eyebrow">Formação prática para o mercado · Manaus</span>
+      <h1>Sua carreira na mecânica <em>começa aqui</em>, em Manaus.</h1>
+      <p class="sub">Aprenda na prática, com as mãos no motor. Carro, moto ou diesel: saia com habilidade de verdade e um caminho até o mercado, do carro elétrico ao híbrido.</p>
+      <form class="pillbar" onsubmit="submitMiniForm();return false;">
+        <span class="pin">🔧</span>
+        <select id="heroCurso" aria-label="O que você quer aprender?">
+          <option value="">O que você quer aprender?</option>
           <option value="auto">Mecânica automotiva (carro)</option>
           <option value="moto">Mecânica de moto</option>
           <option value="diesel">Mecânica diesel</option>
-        </select></label>
-      <button class="btn btn-green" type="submit">Continuar →</button>
-      <small>Sem compromisso. Seus dados ficam seguros.</small>
-    </form>
+          <option value="indeciso">Ainda não sei — me ajudem</option>
+        </select>
+        <button class="btn btn-brand" type="submit">Quero conhecer →</button>
+      </form>
+      <p class="hint">Sem compromisso · a partir de 14 anos · a gente chama no WhatsApp</p>
+    </div>
   </div>
 </header>
+<div class="wrap statsband">
+  <div class="hero-stats">
+    <div class="hs"><i>🏫</i><b>Desde 2011</b><span>rede de escolas</span></div>
+    <div class="hs"><i>🔧</i><b>3 áreas</b><span>Automotiva, Moto e Diesel</span></div>
+    <div class="hs"><i>🎓</i><b>14+</b><span>anos para começar</span></div>
+    <div class="hs"><i>💳</i><b>Até 18x*</b><span>parcelamento nos cursos</span></div>
+  </div>
+</div>
 
-<div class="numbers"><div class="wrap">
-  <div class="num"><b>2011</b><span>rede com mais de uma década de escola</span></div>
-  <div class="num"><b>3 áreas</b><span>Automotiva, Moto e Diesel</span></div>
-  <div class="num"><b>14+</b><span>anos para começar</span></div>
-  <div class="num"><b>18x</b><span>parcelamento* nos cursos</span></div>
-</div></div>
+
 <!-- PENDENTE ESCOLA: confirmar 18x e valores da unidade Manaus; número de alunos da rede (70 mil x +100 mil) -->
 
 <section class="light" id="caminho"><div class="wrap">
@@ -487,11 +527,9 @@ function abrirFunil(origem,quem,curso){
 
 /* mini form do hero */
 function submitMiniForm(){
-  var n=document.getElementById('heroNome').value.trim(),w=document.getElementById('heroWhats').value.trim(),c=document.getElementById('heroCurso').value;
-  if(n)document.getElementById('nome').value=n;
-  if(w)document.getElementById('whatsapp').value=w;
+  var c=document.getElementById('heroCurso').value;
   if(c)preselect('curso',c);
-  LEAD_ORIGEM=(LEAD_ORIGEM==='site'?'hero':LEAD_ORIGEM);
+  if(LEAD_ORIGEM==='site')LEAD_ORIGEM='hero';
   showStep(lead.quem&&lead.curso?2:1);
 }
 
@@ -561,9 +599,16 @@ function finish(){
 /* nav, vídeo, ano */
 (function(){var n=document.getElementById('nav');var f=function(){n.classList.toggle('scrolled',window.scrollY>40);};addEventListener('scroll',f,{passive:true});f();})();
 (function(){var v=document.getElementById('heroVideo'),m=document.getElementById('heroMedia');
-  v.addEventListener('loadeddata',function(){m.classList.add('has-video');});
+  function ok(){m.classList.add('has-video');}
+  v.addEventListener('loadeddata',ok);
   v.addEventListener('error',function(){v.remove();});
-  v.querySelector('source').addEventListener('error',function(){v.remove();});})();
+  var src=v.querySelector('source');if(src)src.addEventListener('error',function(){v.remove();});
+  /* paralaxe suave com o mouse (só desktop) */
+  if(window.matchMedia('(hover:hover) and (min-width:901px)').matches&&!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var h=document.querySelector('.hero');
+    h.addEventListener('mousemove',function(e){var r=h.getBoundingClientRect();var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;m.style.transform='translate3d('+(-x*14)+'px,'+(-y*8)+'px,0)';});
+    h.addEventListener('mouseleave',function(){m.style.transform='';});
+  }})();
 document.getElementById('ano').textContent=new Date().getFullYear();
 </script>
 </body>
