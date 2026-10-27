@@ -17,6 +17,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Search Console: se verificar por tag, cole o código abaixo (o mais simples é verificar pelo DNS do domínio) -->
+<!-- <meta name="google-site-verification" content="COLE_AQUI"> -->
+<script>
+/* Rastreamento: cole os IDs e publique. Vazio = não carrega nada. */
+var FB_PIXEL_ID="";      /* Meta Pixel (Gerenciador de Eventos) */
+var GA4_ID="";           /* Google Analytics 4, ex.: G-XXXXXXXXXX (opcional) */
+(function(){
+  if(FB_PIXEL_ID){!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',FB_PIXEL_ID);fbq('track','PageView');}
+  if(GA4_ID){var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA4_ID);}
+})();
+/* evento de conversão: Lead (formulário enviado) e Contact (clicou no WhatsApp) */
+function track(ev,p){try{if(window.fbq&&FB_PIXEL_ID)fbq('track',ev,p||{});if(window.gtag&&GA4_ID)gtag('event',ev==='Lead'?'generate_lead':'contact',p||{});}catch(e){}}
+</script>
 <style>
 :root{
   --bg:#07110E; --bg2:#0B1A15; --card:#0F211A; --line:rgba(255,255,255,.09);
@@ -432,14 +445,14 @@ footer a{text-decoration:underline}
 <a href="#" class="wa-float" onclick="abrirFunil('whatsapp');return false;" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.8 1.5 5.6 1.5C23 28.5 28.6 23 28.6 16S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10 10 0 1 1 8.900 5.100zm5.500-7.500c-.3-.2-1.800-.9-2.100-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.300-.5-2.400-1.500-.9-.8-1.5-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.2.200 2.100 3.300 5.200 4.500 3.100 1.200 3.100.8 3.600.8.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400 0-.1-.3-.2-.6-.4z"/></svg></a>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com.br/","telephone":"+55-92-98419-1370","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva, moto e diesel em Manaus para maiores de 14 anos."}
+{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"hasMap":"https://www.google.com/maps/search/?api=1&query=Av.+Margarita+1225+Nova+Cidade+Manaus","image":"https://escoladomecanicomanaus.com.br/assets/logo-branca.png","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com.br/","telephone":"+55-92-98419-1370","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva, moto e diesel em Manaus para maiores de 14 anos."}
 </script>
 
 <script>
 var WA_NUMBER="5592984191370";
 var CAPTA_ENDPOINT="https://capta.riseagencia.com/api/capta-ingest";
-var CAPTA_SLUG="escola-do-mecanico-manaus";   /* criar o cliente no Capta */
-var CAPTA_TOKEN="";                            /* colar o ingest_token do admin do Capta */
+var CAPTA_SLUG="escola-do-mecanico-manaus"; 
+var CAPTA_TOKEN="b7d45fce7b174ca48d66e04f537925289be8a7e44ce94033b09756d7be4f5802";
 var LEAD_ORIGEM="site";
 (function(){try{var o=new URLSearchParams(location.search).get('o');if(o)LEAD_ORIGEM=String(o).slice(0,40);}catch(e){}})();
 
@@ -491,7 +504,7 @@ function nextStep(n){
 function abrirFunil(origem,quem,curso){
   if(origem&&origem!=='whatsapp')LEAD_ORIGEM=origem;
   if(origem==='whatsapp')LEAD_ORIGEM='whatsapp';
-  if(getFlag('em_lead')==='1'){window.open(waLink(getFlag('em_msg')||'Olá! Vim pelo site da Escola do Mecânico Manaus.'),'_blank');return;}
+  if(getFlag('em_lead')==='1'){track('Contact',{content_name:origem||''});window.open(waLink(getFlag('em_msg')||'Olá! Vim pelo site da Escola do Mecânico Manaus.'),'_blank');return;}
   if(quem)preselect('quem',quem);
   if(curso)preselect('curso',curso);
   showStep((lead.quem&&lead.curso)?2:1);
@@ -554,6 +567,7 @@ function submitForm(){
   if(!document.getElementById('lgpd').checked){showError('Marque a autorização para continuarmos.');return;}
   lead.nome=nome;lead.fone=normalizePhone(fone);
   enviarCapta();
+  track('Lead',{content_name:CURSO_LABEL[lead.curso]||'',content_category:LEAD_ORIGEM,value:0,currency:'BRL'});
   var msg=montarMsg();setFlag('em_lead','1');setFlag('em_msg',msg);
   document.getElementById('whatsappLink').href=waLink(msg);
   window.open(waLink(msg),'_blank');
