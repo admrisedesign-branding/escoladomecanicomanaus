@@ -397,20 +397,8 @@ footer a{text-decoration:underline}
       </div>
 
       <div class="fs" data-step="2">
-        <h3>Como falamos com você?</h3><p class="q" id="q2">Só o essencial para o contato.</p>
-        <label class="f"><span id="lblNome">Seu nome</span><input id="nome" autocomplete="name"></label>
-        <label class="f"><span>WhatsApp</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(92) 9 0000-0000"></label>
-        <div id="filhoBox" style="display:none">
-          <label class="f"><span>Nome do aluno(a)</span><input id="alunoNome"></label>
-          <label class="f"><span>Idade do aluno(a)</span><input id="alunoIdade" type="number" min="10" max="99" inputmode="numeric"></label>
-        </div>
-        <label class="consent"><input type="checkbox" id="lgpd"><span id="lgpdTxt">Concordo em receber contato da Escola do Mecânico Manaus por WhatsApp e ligação sobre os cursos, e com o uso dos meus dados para esse fim (LGPD).</span></label>
-        <div class="row"><button class="btn btn-ghost" type="button" onclick="showStep(1)">Voltar</button><button class="btn btn-lime" type="button" onclick="submitForm()">Enviar e falar no WhatsApp</button></div>
-      </div>
-
-      <div class="fs" data-step="3">
-        <h3>Recebemos! Quer agilizar?</h3><p class="q">3 respostas rápidas ajudam a gente a te atender melhor. (opcional)</p>
-        <label class="f"><span>Seu bairro</span><input id="bairro" placeholder="Ex.: Cidade Nova, Flores, Compensa..."></label>
+        <h3>Só mais 3 perguntas rápidas</h3><p class="q">Assim a gente já te atende com a turma e o horário certos.</p>
+        <label class="f"><span>Seu bairro <em style="opacity:.6;font-style:normal">(opcional)</em></span><input id="bairro" placeholder="Ex.: Cidade Nova, Flores, Compensa..."></label>
         <h3 style="font-size:16px;margin:4px 0 10px">Melhor horário para estudar</h3>
         <div class="opts" data-field="horario">
           <button type="button" class="opt" data-val="manha">Manhã</button>
@@ -425,9 +413,21 @@ footer a{text-decoration:underline}
           <button type="button" class="opt" data-val="2027">Início de 2027</button>
           <button type="button" class="opt" data-val="pesquisando">Pesquisando</button>
         </div>
-        <button class="btn btn-lime" style="width:100%" type="button" onclick="submitExtra()">Concluir</button>
-        <a class="skip" onclick="finish()">Pular</a>
+        <div class="row"><button class="btn btn-ghost" type="button" onclick="showStep(1)">Voltar</button><button class="btn btn-lime" type="button" onclick="nextStep(2)">Continuar →</button></div>
       </div>
+
+      <div class="fs" data-step="3">
+        <h3>Quase lá! Como falamos com você?</h3><p class="q" id="q2">Seus dados ficam por último. Ao enviar, abrimos o WhatsApp da escola.</p>
+        <label class="f"><span id="lblNome">Seu nome</span><input id="nome" autocomplete="name"></label>
+        <label class="f"><span>WhatsApp</span><input id="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(92) 9 0000-0000"></label>
+        <div id="filhoBox" style="display:none">
+          <label class="f"><span>Nome do aluno(a)</span><input id="alunoNome"></label>
+          <label class="f"><span>Idade do aluno(a)</span><input id="alunoIdade" type="number" min="10" max="99" inputmode="numeric"></label>
+        </div>
+        <label class="consent"><input type="checkbox" id="lgpd"><span id="lgpdTxt">Concordo em receber contato da Escola do Mecânico Manaus por WhatsApp e ligação sobre os cursos, e com o uso dos meus dados para esse fim (LGPD).</span></label>
+        <div class="row"><button class="btn btn-ghost" type="button" onclick="showStep(2)">Voltar</button><button class="btn btn-lime" type="button" onclick="submitForm()">Enviar e falar no WhatsApp</button></div>
+      </div>
+
     </div>
 
     <div class="ok" id="formSuccess">
@@ -497,6 +497,7 @@ function showStep(n){
 function showError(m){var e=document.getElementById('formError');e.textContent=m;e.style.display='block';setTimeout(function(){e.style.display='none';},3500);}
 function nextStep(n){
   if(n===1){if(!lead.quem){showError('Escolha para quem é o curso.');return;}if(!lead.curso){showError('Escolha o que quer aprender.');return;}}
+  if(n===2){if(!lead.horario){showError('Escolha o melhor horário para estudar.');return;}if(!lead.quando){showError('Diga quando quer começar.');return;}}
   showStep(n+1);
 }
 
@@ -537,8 +538,8 @@ function enviarCapta(extra){
     respostas:[
       {texto:"Para quem é o curso?",label:QUEM_LABEL[lead.quem]||"-",pontos:lead._s.quem||0},
       {texto:"Curso de interesse",label:CURSO_LABEL[lead.curso]||"-",pontos:lead._s.curso||0}
-    ].concat(lead.quando?[{texto:"Quando quer começar?",label:QUANDO_LABEL[lead.quando],pontos:QUANDO_PTS[lead.quando]||0}]:[]),
-    extra:Object.assign({aluno:lead.aluno||'',idade_aluno:lead.idade||'',consentimento_lgpd:true,pagina:location.pathname,temperatura_site:temperatura()},extra||{})};
+    ].concat(lead.quando?[{texto:"Quando quer começar?",label:QUANDO_LABEL[lead.quando],pontos:QUANDO_PTS[lead.quando]||0}]:[]).concat(lead.horario?[{texto:"Melhor horário para estudar",label:HOR_LABEL[lead.horario],pontos:0}]:[]),
+    extra:Object.assign({aluno:lead.aluno||'',idade_aluno:lead.idade||'',bairro:lead.bairro||'',horario:HOR_LABEL[lead.horario]||'',inicio:QUANDO_LABEL[lead.quando]||'',consentimento_lgpd:true,pagina:location.pathname,temperatura_site:temperatura()},extra||{})};
   try{fetch(CAPTA_ENDPOINT,{method:'POST',keepalive:true,headers:{'Content-Type':'application/json'},body:JSON.stringify(p)});}catch(e){console.warn('CAPTA',e);}
 }
 function montarMsg(){
@@ -566,16 +567,12 @@ function submitForm(){
   }
   if(!document.getElementById('lgpd').checked){showError('Marque a autorização para continuarmos.');return;}
   lead.nome=nome;lead.fone=normalizePhone(fone);
+  lead.bairro=document.getElementById('bairro').value.trim();
   enviarCapta();
   track('Lead',{content_name:CURSO_LABEL[lead.curso]||'',content_category:LEAD_ORIGEM,value:0,currency:'BRL'});
   var msg=montarMsg();setFlag('em_lead','1');setFlag('em_msg',msg);
   document.getElementById('whatsappLink').href=waLink(msg);
   window.open(waLink(msg),'_blank');
-  showStep(3);
-}
-function submitExtra(){
-  lead.bairro=document.getElementById('bairro').value.trim();
-  enviarCapta({bairro:lead.bairro,horario:HOR_LABEL[lead.horario]||'',inicio:QUANDO_LABEL[lead.quando]||''});
   finish();
 }
 function finish(){
