@@ -223,6 +223,34 @@ footer a{text-decoration:underline}
   .cta-bar .btn{width:100%}
   .scroll-hint{display:none}
 }
+
+/* ===== MOBILE: cards em carrossel horizontal (snap) ===== */
+@media(max-width:720px){
+  html,body{max-width:100%;overflow-x:hidden}
+  input,select,textarea{font-size:16px!important}
+  .grid,.tiles,.pais-list{
+    display:flex!important;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;
+    scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+    gap:14px;margin-left:-22px;margin-right:-22px;padding:4px 22px 8px;
+    scroll-padding-left:22px;scrollbar-width:none;max-width:none
+  }
+  .pais-list{margin-bottom:10px}
+  .grid::-webkit-scrollbar,.tiles::-webkit-scrollbar,.pais-list::-webkit-scrollbar{display:none}
+  .grid>.card{flex:0 0 82%;scroll-snap-align:start;align-self:stretch}
+  .tiles>.tile{flex:0 0 68%;scroll-snap-align:start;aspect-ratio:3/4}
+  .pais-list>li{flex:0 0 78%;scroll-snap-align:start;display:flex;align-items:center;min-height:84px}
+  .grid>.rv,.tiles>.rv,.pais-list>.rv,.pais-list.rv{opacity:1!important;transform:none!important}
+  .card:hover,.tile:hover{transform:none}
+  .stats{grid-template-columns:1fr 1fr;gap:22px 12px}
+  .car-dots{display:flex;justify-content:center;gap:7px;margin:14px 0 26px}
+  .car-dots i{width:7px;height:7px;border-radius:50%;background:rgba(160,190,178,.35);transition:all .25s}
+  .car-dots i.on{width:22px;border-radius:4px;background:var(--lime)}
+  .light .car-dots i{background:rgba(11,26,21,.22)}.light .car-dots i.on{background:#0A8F6A}
+  .nota{margin-top:6px}
+  .head{margin-bottom:28px}
+  .head p{font-size:16px}
+}
+@media(min-width:721px){.car-dots{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -611,6 +639,27 @@ function finish(){
   if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in');});return;}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
   els.forEach(function(e,k){e.style.transitionDelay=((k%4)*80)+'ms';io.observe(e);});
+})();
+
+/* carrosséis (mobile): bolinhas indicadoras */
+(function(){
+  var mq=window.matchMedia('(max-width:720px)');
+  document.querySelectorAll('.grid,.tiles,.pais-list').forEach(function(c){
+    var items=[].slice.call(c.children);if(items.length<2)return;
+    var d=document.createElement('div');d.className='car-dots';d.setAttribute('aria-hidden','true');
+    items.forEach(function(){d.appendChild(document.createElement('i'));});
+    c.parentNode.insertBefore(d,c.nextSibling);
+    var dots=[].slice.call(d.children);
+    function upd(){
+      if(!mq.matches)return;
+      var cl=c.getBoundingClientRect().left+22,best=0,bd=1e9;
+      items.forEach(function(it,k){var x=Math.abs(it.getBoundingClientRect().left-cl);if(x<bd){bd=x;best=k;}});
+      if(c.scrollLeft+c.clientWidth>=c.scrollWidth-4)best=items.length-1;
+      dots.forEach(function(x,k){x.classList.toggle('on',k===best);});
+    }
+    c.addEventListener('scroll',function(){requestAnimationFrame(upd);},{passive:true});
+    window.addEventListener('resize',upd);upd();
+  });
 })();
 document.getElementById('ano').textContent=new Date().getFullYear();
 </script>
