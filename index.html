@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Escola do Mecânico Manaus | Cursos de Mecânica Automotiva, Moto e Diesel</title>
-<meta name="description" content="Aprenda mecânica na prática em Manaus: cursos de mecânica automotiva, moto e diesel para quem tem 14 anos ou mais. Aula experimental, parcelas e banco de vagas. Av. Margarita, Nova Cidade.">
+<title>Escola do Mecânico Manaus | Cursos de Mecânica Automotiva, Moto e Especialização</title>
+<meta name="description" content="Aprenda mecânica na prática em Manaus: cursos de mecânica automotiva e de moto para quem tem 14 anos ou mais, e especializações para mecânicos profissionais (injeção eletrônica, elétrica, motor e transmissão). Aula experimental e banco de vagas. Av. Margarita, Nova Cidade.">
 <link rel="canonical" href="https://escoladomecanicomanaus.com/">
 <meta property="og:title" content="Ponha a mão no motor | Escola do Mecânico Manaus">
-<meta property="og:description" content="Cursos de mecânica de carro, moto e diesel. Comece do zero, a partir dos 14 anos. Agende sua aula experimental exclusiva.">
+<meta property="og:description" content="Mecânica de carro e moto do zero, a partir dos 14 anos. Para quem já é mecânico: especialização. Agende sua aula experimental.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://escoladomecanicomanaus.com/">
 <meta property="og:site_name" content="Escola do Mecânico Manaus">
@@ -18,7 +18,7 @@
 <meta property="og:image:alt" content="Ponha a mão no motor. Cursos de mecânica em Manaus.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ponha a mão no motor | Escola do Mecânico Manaus">
-<meta name="twitter:description" content="Mecânica de carro, moto e diesel em Manaus. Comece do zero, a partir dos 14 anos.">
+<meta name="twitter:description" content="Mecânica de carro e moto em Manaus, do zero. Para mecânicos: especialização em injeção, elétrica e motor.">
 <meta name="twitter:image" content="https://escoladomecanicomanaus.com/assets/og-image.jpg">
 <meta name="theme-color" content="#07110E">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -130,7 +130,7 @@ section.light{background:var(--light);color:var(--lt-ink)}
 .head p{margin-top:14px;color:var(--mut);font-size:17px}
 .light .head p{color:var(--lt-mut)}
 .grid{display:grid;gap:18px}
-.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}.g5{grid-template-columns:repeat(5,1fr)}.g5 .card{padding-left:18px;padding-right:18px}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
 .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 24px;transition:.25s;display:flex;flex-direction:column;align-items:center}
 .card:hover{transform:translateY(-5px);border-color:rgba(34,211,184,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .light .card{background:#fff;border-color:#DCE8E2}
@@ -214,7 +214,7 @@ footer a{text-decoration:underline}
 .rv.in{opacity:1;transform:none}
 
 @media(max-width:960px){
-  .g4,.stats,.tiles{grid-template-columns:repeat(2,1fr)}
+  .g4,.g5,.stats,.tiles{grid-template-columns:repeat(2,1fr)}
   .g3{grid-template-columns:1fr}
   .mf-fields{grid-template-columns:1fr 1fr}
   .mf-fields .btn{grid-column:1/-1}
@@ -230,7 +230,7 @@ footer a{text-decoration:underline}
   section{padding:70px 0}
   .hero{padding:96px 0 130px}
   .mf-fields{grid-template-columns:1fr}
-  .g4,.g2{grid-template-columns:1fr}
+  .g4,.g5,.g2{grid-template-columns:1fr}
   .tiles{grid-template-columns:1fr 1fr}
   .wa-float{bottom:84px}
   .cta-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:39;padding:10px 14px;background:rgba(7,17,14,.92);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
@@ -276,6 +276,7 @@ footer a{text-decoration:underline}
     <div class="nav-links">
       <a href="#caminho">Para quem é</a>
       <a href="#cursos">Cursos</a>
+      <a href="#especializacao">Para mecânicos</a>
       <a href="#pais">Para pais</a>
       <a href="#faq">Dúvidas</a>
       <a href="#form" class="btn btn-lime" onclick="abrirFunil('nav');return false;"><span class="lg">Agende Aula Experimental Exclusiva</span><span class="sm">Agende Aula Exclusiva</span><span class="nm"> →</span></a>
@@ -292,7 +293,7 @@ footer a{text-decoration:underline}
   <div class="hero-in">
     <span class="pill"><b></b>Matrículas abertas · 14+ anos</span>
     <h1>A mecânica do futuro <i class="grad">começa na sua mão.</i></h1>
-    <p class="sub">Carros, motos e diesel. Aprenda na oficina, com instrutor do lado, e saia pronto para o mercado, para o primeiro emprego ou para o seu próprio negócio.</p>
+    <p class="sub">Carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e saia pronto para o mercado, para o primeiro emprego ou para o seu próprio negócio.</p>
     <div class="mf-wrap">
       <form class="mf" onsubmit="submitMiniForm();return false;">
         <span class="mf-label">Garanta sua aula experimental</span>
@@ -303,7 +304,7 @@ footer a{text-decoration:underline}
             <option value="">O que quer aprender?</option>
             <option value="auto">Mecânica automotiva</option>
             <option value="moto">Mecânica de moto</option>
-            <option value="diesel">Mecânica diesel</option>
+            <option value="esp">Sou mecânico: especialização</option>
             <option value="indeciso">Ainda não sei</option>
           </select>
           <button type="submit" class="btn btn-lime">Quero começar →</button>
@@ -317,16 +318,27 @@ footer a{text-decoration:underline}
   <span class="scroll-hint" aria-hidden="true"></span>
 </header>
 
-<div class="marq" aria-hidden="true"><div><span>Motor</span><span>Freios</span><span>Suspensão</span><span>Injeção eletrônica</span><span>Diagnóstico com scanner</span><span>Elétrica</span><span>Moto</span><span>Diesel</span><span>Carros híbridos e elétricos</span><span>Atendimento ao cliente</span><span>Motor</span><span>Freios</span><span>Suspensão</span><span>Injeção eletrônica</span><span>Diagnóstico com scanner</span><span>Elétrica</span><span>Moto</span><span>Diesel</span><span>Carros híbridos e elétricos</span><span>Atendimento ao cliente</span></div></div>
+<div class="marq" aria-hidden="true"><div><span>Motor</span><span>Freios</span><span>Suspensão</span><span>Injeção eletrônica</span><span>Diagnóstico com scanner</span><span>Elétrica</span><span>Moto</span><span>Câmbio e transmissão</span><span>Carros híbridos e elétricos</span><span>Atendimento ao cliente</span><span>Motor</span><span>Freios</span><span>Suspensão</span><span>Injeção eletrônica</span><span>Diagnóstico com scanner</span><span>Elétrica</span><span>Moto</span><span>Câmbio e transmissão</span><span>Carros híbridos e elétricos</span><span>Atendimento ao cliente</span></div></div>
 
 <section id="caminho"><div class="wrap">
   <div class="head rv"><span class="tag">Qual é o seu caminho?</span><h2>Mecânica é para quem quer <i class="grad">criar o próprio futuro.</i></h2><p>Não importa se você está começando agora ou quer virar a chave de carreira. A maioria dos nossos alunos chega sem nunca ter mexido em um motor.</p></div>
-  <div class="grid g4">
+  <div class="grid g5">
     <div class="card rv"><div class="ic">🎓</div><h3>Tenho 14 a 17 anos</h3><p>Comece cedo, com ritmo e acompanhamento. Uma habilidade que ninguém tira de você.</p><a class="lk" onclick="abrirFunil('caminho-teen','filho')">Ver cursos</a></div>
-    <div class="card rv"><div class="ic">🚀</div><h3>Quero meu primeiro emprego</h3><p>Aprenda o que a oficina realmente pede e chegue com confiança nas vagas.</p><a class="lk" onclick="abrirFunil('caminho-jovem','mim')">Quero começar</a></div>
+    <div class="card rv"><div class="ic">🚀</div><h3>Quero criar meu próprio emprego</h3><p>Aprenda o que a oficina realmente pede e chegue com confiança nas vagas ou abra o seu próprio negócio.</p><a class="lk" onclick="abrirFunil('caminho-jovem','mim')">Quero começar</a></div>
     <div class="card rv"><div class="ic">🔄</div><h3>Quero mudar de profissão</h3><p>Recomece em um mercado que sempre precisa de gente, com turmas que cabem na rotina.</p><a class="lk" onclick="abrirFunil('caminho-adulto','mim')">Ver horários</a></div>
     <div class="card rv"><div class="ic">👨‍👩‍👧</div><h3>É para o meu filho(a)</h3><p>Entenda como funciona, a segurança, o investimento e o que ele vai aprender.</p><a class="lk" href="#pais">Ver para pais</a></div>
+    <div class="card rv"><div class="ic">🔧</div><h3>Já sou mecânico e quero me especializar</h3><p>Injeção eletrônica, elétrica e motor/transmissão para subir de nível e cobrar mais.</p><a class="lk" href="#especializacao">Ver especializações</a></div>
   </div>
+</div></section>
+
+<section class="alt" id="especializacao"><div class="wrap">
+  <div class="head rv"><span class="tag">Para mecânicos profissionais</span><h2>Já é mecânico? <i class="grad">Especialize-se e suba de nível.</i></h2><p>Cursos de especialização para quem já trabalha na área e quer dominar os sistemas que mais dão serviço (e mais valem).</p></div>
+  <div class="grid g3">
+    <div class="card rv"><div class="area">Especialização</div><h3>Motor e Transmissão</h3><p>Diagnóstico e reparo de motor, câmbio e transmissão com prática de bancada.</p><a class="lk" onclick="abrirFunil('esp-motor','mecanico','esp')">Quero saber mais</a></div>
+    <div class="card rv"><div class="area">Especialização</div><h3>Injeção Eletrônica</h3><p>Gestão eletrônica, scanner e diagnóstico dos carros de hoje.</p><a class="lk" onclick="abrirFunil('esp-injecao','mecanico','esp')">Quero saber mais</a></div>
+    <div class="card rv"><div class="area">Especialização</div><h3>Elétrica, Carga e Partida</h3><p>Sistema elétrico, alternador, motor de partida e falhas elétricas.</p><a class="lk" onclick="abrirFunil('esp-eletrica','mecanico','esp')">Quero saber mais</a></div>
+  </div>
+  <p class="nota">* Carga horária, datas e valores são confirmados pela unidade de Manaus.</p>
 </div></section>
 
 <section class="alt"><div class="wrap">
@@ -334,19 +346,23 @@ footer a{text-decoration:underline}
     <div class="stat rv"><b class="grad">14+</b><span>idade mínima</span></div>
     <div class="stat rv"><b class="grad">0</b><span>experiência exigida</span></div>
     <div class="stat rv"><b class="grad">2011</b><span>rede fundada em Campinas</span></div>
-    <div class="stat rv"><b class="grad">3</b><span>linhas: leve, pesada e moto</span></div>
+    <div class="stat rv"><b class="grad">3</b><span>especializações para profissionais</span></div>
   </div>
 </div></section>
 
 <section id="cursos"><div class="wrap">
   <div class="head rv"><span class="tag">Cursos</span><h2>Escolha sua área. <i class="grad">A gente guia o resto.</i></h2><p>Do motor à eletrônica embarcada: conteúdo prático, do básico ao diagnóstico. Na aula experimental, você conhece a oficina e descobre qual combina com você.</p></div>
-  <div class="grid g3">
+  <div class="grid g2">
     <div class="card rv"><div class="area">Linha leve</div><h3>Mecânica automotiva</h3><p>Motor, freios, suspensão, elétrica, injeção e diagnóstico. A base para trabalhar com carros de hoje.</p><a class="lk" onclick="abrirFunil('curso-auto','mim','auto')">Quero este curso</a></div>
     <div class="card rv"><div class="area">Moto</div><h3>Mecânica de moto</h3><p>A moto é o dia a dia de Manaus. Aprenda a manter, consertar e abrir seu próprio negócio.</p><a class="lk" onclick="abrirFunil('curso-moto','mim','moto')">Quero este curso</a></div>
-    <div class="card rv"><div class="area">Linha pesada</div><h3>Mecânica diesel</h3><p>Caminhões, ônibus e máquinas: um mercado forte e que paga bem para quem sabe.</p><a class="lk" onclick="abrirFunil('curso-diesel','mim','diesel')">Quero este curso</a></div>
   </div>
   <p class="nota">* Carga horária, valores e condições variam por curso e são confirmados pela unidade de Manaus.</p>
   <!-- PENDENTE ESCOLA: lista final de cursos de entrada, cargas horárias e preços locais -->
+</div></section>
+
+<section id="unidade" class="alt"><div class="wrap">
+  <div class="head rv"><span class="tag">Nossa unidade</span><h2>Venha conhecer a escola <i class="grad">em Manaus.</i></h2><p>Av. Margarita, 1225, Nova Cidade. Agende uma aula experimental e veja a oficina de perto.</p></div>
+  <img class="rv" src="assets/unidade.jpg" alt="Fachada da Escola do Mecânico, unidade Manaus" loading="lazy" style="width:100%;max-width:960px;display:block;margin:0 auto;border-radius:20px" onerror="document.getElementById('unidade').style.display='none'">
 </div></section>
 
 <section class="light" id="como"><div class="wrap">
@@ -415,7 +431,7 @@ footer a{text-decoration:underline}
     <div><b>💬 WhatsApp</b>(92) 98419-1370</div>
   </div>
   <div class="map-btns">
-    <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&query=Av.+Margarita+1225+Nova+Cidade+Manaus" target="_blank" rel="noopener">📍 Abrir no Google Maps</a>
+    <a class="btn btn-line" href="https://maps.app.goo.gl/MEGmJvVVY4TME3KW7" target="_blank" rel="noopener">📍 Abrir no Google Maps</a>
   </div>
 
   <div class="formbox">
@@ -427,12 +443,15 @@ footer a{text-decoration:underline}
         <div class="opts" data-field="quem">
           <button type="button" class="opt" data-val="mim" data-score="2">Para mim</button>
           <button type="button" class="opt" data-val="filho" data-score="2">Para meu filho(a)</button>
+          <button type="button" class="opt" data-val="mecanico" data-score="3">Sou mecânico<small>Quero me especializar</small></button>
         </div>
         <h3 style="font-size:18px;margin-top:6px">O que quer aprender?</h3>
         <div class="opts" data-field="curso" style="margin-top:12px">
-          <button type="button" class="opt" data-val="auto" data-score="3">Carro<small>Mecânica automotiva</small></button>
-          <button type="button" class="opt" data-val="moto" data-score="3">Moto<small>Mecânica de moto</small></button>
-          <button type="button" class="opt" data-val="diesel" data-score="3">Diesel<small>Caminhão e máquinas</small></button>
+          <button type="button" class="opt c-ini" data-val="auto" data-score="3">Carro<small>Mecânica automotiva</small></button>
+          <button type="button" class="opt c-ini" data-val="moto" data-score="3">Moto<small>Mecânica de moto</small></button>
+          <button type="button" class="opt c-esp" data-val="esp-motor" data-score="3" style="display:none">Motor e Transmissão<small>Especialização</small></button>
+          <button type="button" class="opt c-esp" data-val="esp-injecao" data-score="3" style="display:none">Injeção Eletrônica<small>Especialização</small></button>
+          <button type="button" class="opt c-esp" data-val="esp-eletrica" data-score="3" style="display:none">Elétrica, Carga e Partida<small>Especialização</small></button>
           <button type="button" class="opt" data-val="indeciso" data-score="1">Ainda não sei<small>Me ajudem a escolher</small></button>
         </div>
         <button class="btn btn-lime" style="width:100%" type="button" onclick="nextStep(1)">Continuar →</button>
@@ -487,7 +506,7 @@ footer a{text-decoration:underline}
 <a href="#" class="wa-float" onclick="abrirFunil('whatsapp');return false;" aria-label="Falar pelo WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-2c1.8 1 3.8 1.5 5.6 1.5C23 28.5 28.6 23 28.6 16S23 3 16 3zm0 22.800c-1.800 0-3.500-.5-5-1.400l-.4-.2-4.400 1.200 1.200-4.300-.3-.4a10 10 0 1 1 8.900 5.100zm5.500-7.500c-.3-.2-1.800-.9-2.100-1-.3-.1-.5-.2-.7.200-.2.300-.8 1-1 1.200-.2.200-.4.200-.7.100-.3-.2-1.300-.5-2.400-1.500-.9-.8-1.5-1.800-1.700-2.100-.2-.3 0-.5.100-.6l.5-.5c.1-.2.200-.3.300-.5.100-.2 0-.4 0-.5l-1-2.300c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.2.200 2.100 3.300 5.200 4.500 3.100 1.200 3.100.8 3.600.8.600-.1 1.800-.7 2-1.400.3-.7.300-1.300.2-1.400 0-.1-.3-.2-.6-.4z"/></svg></a>
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"hasMap":"https://www.google.com/maps/search/?api=1&query=Av.+Margarita+1225+Nova+Cidade+Manaus","image":"https://escoladomecanicomanaus.com/assets/logo-branca.png","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com/","telephone":"+55-92-98419-1370","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva, moto e diesel em Manaus para maiores de 14 anos.","@id":"https://escoladomecanicomanaus.com/#escola","logo":"https://escoladomecanicomanaus.com/favicon.png","sameAs":["https://www.instagram.com/escoladomecanico.manaus/"],"alternateName":["Escola do Mecânico Nova Cidade","Escola do Mecânico - unidade Manaus"],"inLanguage":"pt-BR"}
+{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"hasMap":"https://maps.app.goo.gl/MEGmJvVVY4TME3KW7","image":"https://escoladomecanicomanaus.com/assets/logo-branca.png","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com/","telephone":"+55-92-98419-1370","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva e de moto em Manaus para maiores de 14 anos, e especializações para mecânicos profissionais.","@id":"https://escoladomecanicomanaus.com/#escola","logo":"https://escoladomecanicomanaus.com/favicon.png","sameAs":["https://www.instagram.com/escoladomecanico.manaus/"],"alternateName":["Escola do Mecânico Nova Cidade","Escola do Mecânico - unidade Manaus"],"inLanguage":"pt-BR","geo":{"@type":"GeoCoordinates","latitude":-3.0021714,"longitude":-59.9835111}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","@id":"https://escoladomecanicomanaus.com/#site","url":"https://escoladomecanicomanaus.com/","name":"Escola do Mecânico Manaus","alternateName":"Escola do Mecânico Manaus","inLanguage":"pt-BR","publisher":{"@id":"https://escoladomecanicomanaus.com/#escola"}}
@@ -501,8 +520,8 @@ var CAPTA_TOKEN="b7d45fce7b174ca48d66e04f537925289be8a7e44ce94033b09756d7be4f580
 var LEAD_ORIGEM="site";
 (function(){try{var o=new URLSearchParams(location.search).get('o');if(o)LEAD_ORIGEM=String(o).slice(0,40);}catch(e){}})();
 
-var CURSO_LABEL={auto:"Mecânica automotiva",moto:"Mecânica de moto",diesel:"Mecânica diesel",indeciso:"Ainda não sabe"};
-var QUEM_LABEL={mim:"Para si mesmo(a)",filho:"Para filho(a)"};
+var CURSO_LABEL={auto:"Mecânica automotiva",moto:"Mecânica de moto","esp-motor":"Especialização em Motor e Transmissão","esp-injecao":"Especialização em Injeção Eletrônica","esp-eletrica":"Especialização em Elétrica, Carga e Partida",esp:"Especialização para mecânicos",indeciso:"Ainda não sabe"};
+var QUEM_LABEL={mim:"Para si mesmo(a)",filho:"Para filho(a)",mecanico:"Mecânico profissional (especialização)"};
 var HOR_LABEL={manha:"Manhã",tarde:"Tarde",noite:"Noite",sabado:"Sábado"};
 var QUANDO_LABEL={agora:"O quanto antes",mes:"Neste mês",2027:"Início de 2027",pesquisando:"Pesquisando"};
 var QUANDO_PTS={agora:4,mes:3,2027:2,pesquisando:0};
@@ -529,6 +548,10 @@ function preselect(f,v){
   if(f==='quem')refreshQuem();
 }
 function refreshQuem(){
+  var m=lead.quem==='mecanico';
+  document.querySelectorAll('.c-ini').forEach(function(b){b.style.display=m?'none':'';});
+  document.querySelectorAll('.c-esp').forEach(function(b){b.style.display=m?'':'none';});
+  if(lead.curso){var okc=m?(lead.curso.indexOf('esp')===0||lead.curso==='indeciso'):(lead.curso.indexOf('esp')!==0);if(!okc){lead.curso='';delete lead._s.curso;document.querySelectorAll('.opts[data-field="curso"] .opt').forEach(function(x){x.classList.remove('sel');});}}
   var k=lead.quem==='filho';
   document.getElementById('filhoBox').style.display=k?'block':'none';
   document.getElementById('lblNome').textContent=k?'Seu nome (responsável)':'Seu nome';
@@ -561,7 +584,7 @@ function submitMiniForm(){
   var n=document.getElementById('heroNome').value.trim(),w=document.getElementById('heroWhats').value.trim(),c=document.getElementById('heroCurso').value;
   if(!n||!w){var h=document.getElementById('heroErr');h.textContent='Preencha seu nome e WhatsApp.';h.style.display='block';setTimeout(function(){h.style.display='none';},3000);return;}
   document.getElementById('nome').value=n;document.getElementById('whatsapp').value=w;
-  if(c)preselect('curso',c);
+  if(c==='esp'){preselect('quem','mecanico');}else if(c){preselect('curso',c);}
   if(LEAD_ORIGEM==='site')LEAD_ORIGEM='hero';
   showStep(lead.quem&&lead.curso?2:1,true);
 }
