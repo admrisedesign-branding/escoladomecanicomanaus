@@ -265,12 +265,13 @@ footer a{text-decoration:underline}
   .head p{font-size:16px}
 }
 @media(min-width:721px){.car-dots{display:none}}
-.unit{background:#06130d;text-align:center}
-.unit picture{display:block;position:relative}.unit img{display:block;width:100%;height:clamp(260px,50vw,620px);object-fit:cover;object-position:center 45%}
-.unit picture::after{content:"";position:absolute;left:0;right:0;bottom:0;height:35%;background:linear-gradient(180deg,rgba(6,19,13,0),#06130d)}
-.unit-in{position:relative;z-index:2;margin-top:-56px;padding-top:0;padding-bottom:56px}.unit-in h2{margin:8px auto 0;max-width:720px}.unit-in p{max-width:560px;margin:12px auto 24px}
+.unit{text-align:center;padding-top:80px;overflow:hidden}
+.unit-in{position:relative;z-index:2;padding-bottom:0}.unit-in h2{margin:8px auto 0;max-width:720px}.unit-in p{max-width:560px;margin:12px auto 24px}
 .unit-btns{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-@media(max-width:720px){.unit img{height:300px;object-position:30% 40%}.unit-in{margin-top:-36px}.unit-btns .btn{width:100%;justify-content:center}}
+.unit-pic{display:block;margin-top:-30px;position:relative;z-index:1}
+.unit-pic img{display:block;width:100%;height:clamp(300px,52vw,640px);object-fit:cover;object-position:center 45%;
+ -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 24%,#000 62%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 24%,#000 62%,transparent 100%)}
+@media(max-width:720px){.unit{padding-top:56px}.unit-pic{margin-top:-10px}.unit-pic img{height:320px;object-position:30% 40%}.unit-btns .btn{width:100%;justify-content:center}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
@@ -423,9 +424,10 @@ footer a{text-decoration:underline}
   </div>
 </div></section>
 
-<section id="unidade" class="unit"><picture><source srcset="assets/unidade.webp" type="image/webp"><img src="assets/unidade.jpg" alt="Fachada da Escola do Mecânico, unidade Manaus, na Av. Margarita" loading="lazy" width="1672" height="941"></picture>
+<section id="unidade" class="unit">
   <div class="unit-in wrap rv"><span class="tag">Nossa unidade</span><h2>Venha conhecer a escola <i class="grad">em Manaus.</i></h2><p>Av. Margarita, 1225, Nova Cidade. Agende uma aula experimental e veja a oficina de perto.</p>
   <div class="unit-btns"><a class="btn btn-lime" href="#form" onclick="abrirFunil('unidade');return false;">Agendar aula experimental</a><a class="btn btn-line" href="https://maps.app.goo.gl/MEGmJvVVY4TME3KW7" target="_blank" rel="noopener">📍 Como chegar</a></div></div>
+  <picture class="unit-pic"><source srcset="assets/unidade.webp" type="image/webp"><img src="assets/unidade.jpg" alt="Fachada da Escola do Mecânico, unidade Manaus, na Av. Margarita" loading="lazy" width="1672" height="941"></picture>
 </section>
 
 <section class="closing" id="form"><div class="wrap">
