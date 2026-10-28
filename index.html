@@ -573,7 +573,8 @@ function nextStep(n){
 function abrirFunil(origem,quem,curso){
   if(origem&&origem!=='whatsapp')LEAD_ORIGEM=origem;
   if(origem==='whatsapp')LEAD_ORIGEM='whatsapp';
-  if(getFlag('em_lead')==='1'){track('Contact',{content_name:origem||''});window.open(waLink(getFlag('em_msg')||'Olá! Vim pelo site da Escola do Mecânico Manaus.'),'_blank');return;}
+  if(origem==='whatsapp'&&getFlag('em_lead')==='1'){track('Contact',{content_name:origem||''});window.open(waLink(getFlag('em_msg')||'Olá! Vim pelo site da Escola do Mecânico Manaus.'),'_blank');return;}
+  if(document.getElementById('formSuccess').style.display==='block'){document.getElementById('formSuccess').style.display='none';document.getElementById('formSteps').style.display='';document.querySelector('.dots').style.display='';}
   if(quem)preselect('quem',quem);
   if(curso)preselect('curso',curso);
   showStep((lead.quem&&lead.curso)?2:1,true);
