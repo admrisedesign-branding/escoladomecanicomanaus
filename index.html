@@ -178,6 +178,7 @@ section.light{background:var(--light);color:var(--lt-ink)}
 .faq p{padding:0 28px 22px;color:var(--mut);font-size:15px}
 
 /* fechamento / formulário */
+.unit-hrs{font-size:14px;opacity:.85;margin-top:-4px}
 .unit+.closing{padding-top:56px}
 .closing{background:radial-gradient(ellipse at 50% 0,rgba(16,185,129,.18),transparent 60%),var(--bg)}
 .closing h2{font-size:clamp(30px,4.4vw,48px);font-weight:800}
@@ -300,8 +301,8 @@ footer a{text-decoration:underline}
   <i class="hero-glow"></i>
   <div class="hero-in">
     <span class="pill"><b></b>Matrículas abertas · 14+ anos</span>
-    <h1>A mecânica do futuro <i class="grad">começa na sua mão.</i></h1>
-    <p class="sub">Carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e desenvolva as habilidades que a mecânica de hoje exige.</p>
+    <h1>A mecânica do futuro <i class="grad">começa na sua mão, em Manaus.</i></h1>
+    <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e desenvolva as habilidades que a mecânica de hoje exige.</p>
     <div class="mf-wrap">
       <form class="mf" onsubmit="submitMiniForm();return false;">
         <span class="mf-label">Garanta sua aula experimental</span>
@@ -416,17 +417,17 @@ footer a{text-decoration:underline}
   <div class="faq rv">
     <details><summary>Preciso saber alguma coisa de mecânica?</summary><p>Não. Os cursos de entrada começam do zero. Você aprende na prática, passo a passo.</p></details>
     <details><summary>A partir de que idade posso fazer?</summary><p>A partir de 14 anos. Para menores de 18, a matrícula é feita com autorização do responsável.</p></details>
-    <details><summary>Quanto custa?</summary><p>Os valores variam conforme o curso e podem ser parcelados. Depois do formulário, a equipe te passa os valores da unidade de Manaus.</p></details>
-    <details><summary>Como funciona a aula experimental?</summary><p>Você visita a escola, conhece a oficina e os instrutores e vê como são as aulas. Agende pelo formulário ou WhatsApp.</p></details>
-    <details><summary>Tem turma à noite ou aos sábados?</summary><p>Consulte os horários disponíveis na unidade. Informe a sua preferência no formulário que organizamos a melhor turma.</p></details>
+    <details><summary>Quanto custa?</summary><p>O valor é apresentado na aula experimental, porque antes a equipe conhece o seu nível e indica o melhor curso para você.</p></details>
+    <details><summary>Como funciona a aula experimental?</summary><p>É uma aula experimental exclusiva, e não uma aula grátis. Você visita a escola, conhece a oficina e os instrutores e vê como são as aulas, e a equipe entende o quanto você já sabe para indicar o melhor curso. Agende pelo formulário.</p></details>
+    <details><summary>Qual o horário de funcionamento? Tem turma à noite ou aos sábados?</summary><p>A escola funciona de segunda a quinta, das 8h às 20h, na sexta das 8h às 18h e no sábado das 8h às 15h. Aos domingos fica fechada. Informe a sua preferência de turma no formulário que organizamos a melhor opção.</p></details>
     <details><summary>Fica onde? Como chego?</summary><p>Av. Margarita, 1225, Nova Cidade, Manaus. Toque em "Abrir no Google Maps" na seção de contato para traçar a rota.</p></details>
-    <details><summary>O certificado vale para quê?</summary><p>Você recebe o certificado de conclusão da Escola do Mecânico. Detalhes são explicados na matrícula.</p></details>
+    <details><summary>O certificado vale para quê?</summary><p>Sim, você recebe o certificado de conclusão da Escola do Mecânico. Os detalhes são explicados na matrícula.</p></details>
     <details><summary>Vou conseguir emprego depois?</summary><p>Não garantimos emprego nem salário. Oferecemos uma formação prática e o acesso ao banco de vagas Emprega Mecânico, que divulga oportunidades de oficinas e empresas.</p></details>
   </div>
 </div></section>
 
 <section id="unidade" class="unit">
-  <div class="unit-in wrap rv"><span class="tag">Nossa unidade</span><h2>Venha conhecer a escola <i class="grad">em Manaus.</i></h2><p>Av. Margarita, 1225, Nova Cidade. Agende uma aula experimental e veja a oficina de perto.</p>
+  <div class="unit-in wrap rv"><span class="tag">Nossa unidade</span><h2>Venha conhecer a escola <i class="grad">em Manaus.</i></h2><p>Av. Margarita, 1225, Nova Cidade. Agende uma aula experimental e veja a oficina de perto.</p><p class="unit-hrs">Segunda a quinta, 8h às 20h · Sexta, 8h às 18h · Sábado, 8h às 15h</p>
   <div class="unit-btns"><a class="btn btn-lime" href="#form" onclick="abrirFunil('unidade');return false;">Agendar aula experimental</a><a class="btn btn-line" href="https://maps.app.goo.gl/MEGmJvVVY4TME3KW7" target="_blank" rel="noopener">📍 Como chegar</a></div></div>
   <picture class="unit-pic"><source srcset="assets/unidade.webp" type="image/webp"><img src="assets/unidade.jpg" alt="Fachada da Escola do Mecânico, unidade Manaus, na Av. Margarita" loading="lazy" width="1672" height="941"></picture>
 </section>
@@ -513,7 +514,10 @@ footer a{text-decoration:underline}
 
 <div class="cta-bar"><a class="btn btn-lime" href="#form" onclick="abrirFunil('barra');return false;">Quero conhecer a escola</a></div>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"hasMap":"https://maps.app.goo.gl/MEGmJvVVY4TME3KW7","image":"https://escoladomecanicomanaus.com/assets/logo-branca.png","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com/","telephone":"+55-92-98419-1370","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva e de moto em Manaus para maiores de 14 anos, e especializações para mecânicos profissionais.","@id":"https://escoladomecanicomanaus.com/#escola","logo":"https://escoladomecanicomanaus.com/favicon.png","sameAs":["https://www.instagram.com/escoladomecanico.manaus/"],"alternateName":["Escola do Mecânico Nova Cidade","Escola do Mecânico - unidade Manaus"],"inLanguage":"pt-BR","geo":{"@type":"GeoCoordinates","latitude":-3.0021714,"longitude":-59.9835111}}
+{"@context":"https://schema.org","@type":["EducationalOrganization","LocalBusiness"],"hasMap":"https://maps.app.goo.gl/MEGmJvVVY4TME3KW7","image":"https://escoladomecanicomanaus.com/assets/logo-branca.png","name":"Escola do Mecânico Manaus","url":"https://escoladomecanicomanaus.com/","address":{"@type":"PostalAddress","streetAddress":"Av. Margarita, 1225","addressLocality":"Manaus","addressRegion":"AM","addressCountry":"BR"},"areaServed":"Manaus","description":"Cursos de mecânica automotiva e de moto em Manaus para maiores de 14 anos, e especializações para mecânicos profissionais.","@id":"https://escoladomecanicomanaus.com/#escola","logo":"https://escoladomecanicomanaus.com/favicon.png","sameAs":["https://www.instagram.com/escoladomecanico.manaus/"],"alternateName":["Escola do Mecânico Nova Cidade","Escola do Mecânico - unidade Manaus"],"inLanguage":"pt-BR","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"08:00","closes":"20:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"15:00"}],"geo":{"@type":"GeoCoordinates","latitude":-3.0021714,"longitude":-59.9835111}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "pt-BR", "mainEntity": [{"@type": "Question", "name": "Preciso saber alguma coisa de mecânica?", "acceptedAnswer": {"@type": "Answer", "text": "Não. Os cursos de entrada começam do zero. Você aprende na prática, passo a passo."}}, {"@type": "Question", "name": "A partir de que idade posso fazer?", "acceptedAnswer": {"@type": "Answer", "text": "A partir de 14 anos. Para menores de 18, a matrícula é feita com autorização do responsável."}}, {"@type": "Question", "name": "Quanto custa?", "acceptedAnswer": {"@type": "Answer", "text": "O valor é apresentado na aula experimental, porque antes a equipe conhece o seu nível e indica o melhor curso para você."}}, {"@type": "Question", "name": "Como funciona a aula experimental?", "acceptedAnswer": {"@type": "Answer", "text": "É uma aula experimental exclusiva, e não uma aula grátis. Você visita a escola, conhece a oficina e os instrutores e vê como são as aulas, e a equipe entende o quanto você já sabe para indicar o melhor curso. Agende pelo formulário."}}, {"@type": "Question", "name": "Qual o horário de funcionamento? Tem turma à noite ou aos sábados?", "acceptedAnswer": {"@type": "Answer", "text": "A escola funciona de segunda a quinta, das 8h às 20h, na sexta das 8h às 18h e no sábado das 8h às 15h. Aos domingos fica fechada. Informe a sua preferência de turma no formulário que organizamos a melhor opção."}}, {"@type": "Question", "name": "Fica onde? Como chego?", "acceptedAnswer": {"@type": "Answer", "text": "Av. Margarita, 1225, Nova Cidade, Manaus. Toque em \"Abrir no Google Maps\" na seção de contato para traçar a rota."}}, {"@type": "Question", "name": "O certificado vale para quê?", "acceptedAnswer": {"@type": "Answer", "text": "Sim, você recebe o certificado de conclusão da Escola do Mecânico. Os detalhes são explicados na matrícula."}}, {"@type": "Question", "name": "Vou conseguir emprego depois?", "acceptedAnswer": {"@type": "Answer", "text": "Não garantimos emprego nem salário. Oferecemos uma formação prática e o acesso ao banco de vagas Emprega Mecânico, que divulga oportunidades de oficinas e empresas."}}]}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","@id":"https://escoladomecanicomanaus.com/#site","url":"https://escoladomecanicomanaus.com/","name":"Escola do Mecânico Manaus","alternateName":"Escola do Mecânico Manaus","inLanguage":"pt-BR","publisher":{"@id":"https://escoladomecanicomanaus.com/#escola"}}
