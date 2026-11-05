@@ -33,6 +33,7 @@ var GA4_ID="G-3VJCCT6SD8";           /* Google Analytics 4, ex.: G-XXXXXXXXXX (o
   if(GA4_ID){var g=document.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id='+GA4_ID;document.head.appendChild(g);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA4_ID);}
 })();
 /* evento de conversão: Lead (formulário enviado) e Contact (clicou no WhatsApp) */
+function ev(n,p){try{if(window.gtag&&GA4_ID)gtag('event',n,p||{});}catch(e){}}
 function track(ev,p){try{if(window.fbq&&FB_PIXEL_ID)fbq('track',ev,p||{});if(window.gtag&&GA4_ID)gtag('event',ev==='Lead'?'generate_lead':'contact',p||{});}catch(e){}}
 </script>
 <style>
@@ -665,7 +666,9 @@ function refreshQuem(){
   $('lblNome').textContent=k?'Seu nome (responsável)':'Seu nome';
   $('lgpdTxt').textContent=k?'Sou o responsável e autorizo o contato da Escola do Mecânico Manaus por WhatsApp e ligação sobre os cursos, e o uso dos dados para esse fim (LGPD).':'Concordo em receber contato da Escola do Mecânico Manaus por WhatsApp e ligação sobre os cursos, e com o uso dos meus dados para esse fim (LGPD).';
 }
+var _st={};
 function showStep(n,go){
+  if(go||n>1){if(!_st[n]){_st[n]=1;ev('form_step',{etapa:n,pagina:'black-friday'});}}
   document.querySelectorAll('.fs').forEach(function(s){s.classList.toggle('on',parseInt(s.getAttribute('data-step'))===n);});
   document.querySelectorAll('.step-dot').forEach(function(d){d.classList.toggle('active',parseInt(d.getAttribute('data-step'))<=n);});
   if(go){var fb=$('form');if(fb)fb.scrollIntoView({behavior:'smooth',block:'start'});}
@@ -677,6 +680,7 @@ function nextStep(n){
   showStep(n+1);
 }
 function abrirFunil(origem,quem,curso){
+  ev('cta_click',{posicao:origem||'',pagina:'black-friday'});
   if($('formSuccess').style.display==='block'){$('formSuccess').style.display='none';$('formSteps').style.display='';document.querySelector('.dots').style.display='';}
   if(quem)preselect('quem',quem);
   if(curso)preselect('curso',curso);
@@ -729,13 +733,14 @@ function submitForm(){
   lead.nome=nome;lead.fone=normalizePhone(fone);
   syncHidden();
   enviarWebhook();
-  track('Lead',{content_name:CURSO_LABEL[lead.curso]||'',content_category:'blackfriday',value:0,currency:'BRL'});
+  track('Lead',{content_name:CURSO_LABEL[lead.curso]||'',content_category:'blackfriday',value:0,currency:'BRL',curso:lead.curso||'',quem:lead.quem||'',horario:lead.horario||'',quando:lead.quando||'',campanha:'acelera-black-25off'});
   var msg=montarMsg();setFlag('em_msg',msg);
   $('whatsappLink').href=waLink(msg);
   $('formSteps').style.display='none';document.querySelector('.dots').style.display='none';$('formSuccess').style.display='block';
   openWA(msg);
 }
 
+document.getElementById('whatsappLink').addEventListener('click',function(){ev('whatsapp_click',{pagina:'black-friday'});try{if(window.fbq&&FB_PIXEL_ID)fbq('track','Contact');}catch(e){}});
 /* nav, reveal, carrossel mobile, ano */
 (function(){var n=$('nav');var f=function(){n.classList.toggle('scrolled',window.scrollY>40);};addEventListener('scroll',f,{passive:true});f();})();
 (function(){
