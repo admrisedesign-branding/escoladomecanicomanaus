@@ -329,6 +329,48 @@ nav{top:var(--bar)}
 .gnote{text-align:center;font-size:13px;color:#9DB8AD;margin-top:14px}
 .fach{margin-top:34px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
 .fach img{display:block;width:100%;height:clamp(240px,40vw,460px);object-fit:cover;object-position:center 45%}
+
+/* hero em duas colunas (estrutura do hero de referência) */
+.bf-hero{display:block;text-align:left;padding:128px 0 90px}
+.bh{position:relative;z-index:3;max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:.82fr 1.28fr;gap:20px;align-items:center}
+.bh-tag{display:inline-block;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);border:1px solid rgba(198,244,50,.4);border-radius:99px;padding:7px 14px}
+.bf-hero .bh h1{margin:18px 0 12px}
+.bf-hero .bh .big{font-size:clamp(84px,11vw,150px)}
+.bf-hero .bh .sm{font-size:clamp(26px,2.7vw,40px);text-wrap:balance}
+.bf-hero .bh .sub{margin:0;max-width:520px}
+.bh .cd{justify-content:flex-start;margin:10px 0 0;max-width:420px}
+.bh .cd-label{margin-top:22px}
+.bh-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.bh-trust{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:13px;color:var(--mut)}
+.bh-trust li{display:flex;align-items:center;gap:6px}
+.bh-trust li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime)}
+.bh-trust li.g{color:#fff;font-weight:600}.bh-trust li.g::before{display:none}.bh-trust .st{color:var(--lime)}
+.bh-art{position:relative;padding-bottom:12%}
+.bh-art picture,.bh-art picture img{display:block;width:100%;height:auto}
+.bh-art picture{-webkit-mask-image:linear-gradient(180deg,#000 90%,transparent);mask-image:linear-gradient(180deg,#000 90%,transparent);filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}
+.bh-ab{position:absolute;left:50%;top:72%;width:38%;height:auto;transform:translateX(-50%);box-shadow:0 14px 34px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12)}
+.chip{position:absolute;background:rgba(8,16,12,.9);border:1px solid rgba(198,244,50,.5);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-width:34%}
+.chip b{display:block;font:800 clamp(15px,1.9vw,24px)/1.05 Sora,sans-serif;color:var(--lime)}
+.chip span{display:block;margin-top:3px;font-size:clamp(10px,1.1vw,13px);line-height:1.25;color:#d3e4dc}
+.chip.c1{left:0;top:2%}.chip.c2{right:0;top:30%}.chip.c3{left:0;top:56%}.chip.c4{right:0;top:66%}
+@media(max-width:900px){.bh{grid-template-columns:1fr;gap:26px}.bf-hero{padding:120px 0 60px}.bf-hero .bh .sub{max-width:none}}
+@media(max-width:720px){
+  .bh{padding:0 20px}
+  .bh-cta .btn{flex:1 1 100%;justify-content:center}
+  .bh-trust{font-size:12px}
+  .bh{gap:0}
+  .bh-txt{display:contents}
+  .bh-tag{order:0;justify-self:start}
+  .bf-hero .bh h1{order:1;margin:16px 0 4px}
+  .bh-art{order:2;margin:0 -14px 6px;padding-bottom:13%}
+  .bh .sub,.bh .cd-label,.bh .cd,.bh-cta,.bh-trust{order:3}
+  .bh .cd-label{order:4;margin-top:18px}.bh .cd{order:5}.bh-cta{order:6}.bh-trust{order:7}
+  .chip{padding:7px 10px;border-radius:11px;max-width:42%}
+  .chip b{font-size:14px}.chip span{font-size:10px}
+  .chip.c2,.chip.c4{display:none}
+  .chip.c1{top:0}.chip.c3{top:52%}
+  .bh-ab{width:58%}
+}
 </style>
 </head>
 <body>
@@ -348,36 +390,36 @@ nav{top:var(--bar)}
 </nav>
 
 <header class="hero bf-hero" id="hero">
-  <div class="hero-in">
-    <div class="ab ab-lg" aria-label="Acelera Black">Acelera <em>Black</em><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l9 5-9 5z"/></svg></div>
-    <h1><span class="big">25<small>%</small></span><span class="sm">de desconto em todos os cursos</span></h1>
-    <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e garanta 25% OFF na matrícula.</p>
-    <div class="gscore"><span class="st">★★★★★</span> 5,0 no Google · 29 avaliações</div>
+  <div class="bh">
+    <div class="bh-txt">
+      <span class="bh-tag">Unidade Manaus · oferta até <span id="heroEnd">30/11</span></span>
+      <h1><span class="big">25<small>%</small></span><span class="sm">de desconto em todos os cursos</span></h1>
+      <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e garanta 25% OFF na matrícula.</p>
 
-    <div class="cd-label">A oferta termina em</div>
-    <div class="cd" id="cd" aria-live="off"><div><b id="cdD">00</b><span>dias</span></div><div><b id="cdH">00</b><span>horas</span></div><div><b id="cdM">00</b><span>min</span></div><div><b id="cdS">00</b><span>seg</span></div></div>
+      <div class="cd-label">A oferta termina em</div>
+      <div class="cd" id="cd" aria-live="off"><div><b id="cdD">00</b><span>dias</span></div><div><b id="cdH">00</b><span>horas</span></div><div><b id="cdM">00</b><span>min</span></div><div><b id="cdS">00</b><span>seg</span></div></div>
 
-    <div class="mf-wrap">
-      <form class="mf" onsubmit="submitMiniForm();return false;">
-        <span class="mf-label">Garanta seu desconto e agende sua aula experimental</span>
-        <div class="mf-fields">
-          <input id="heroNome" type="text" placeholder="Seu nome" autocomplete="name" aria-label="Seu nome">
-          <input id="heroWhats" type="tel" inputmode="tel" placeholder="WhatsApp com DDD" autocomplete="tel" aria-label="WhatsApp">
-          <select id="heroCurso" aria-label="Curso de interesse">
-            <option value="">O que quer aprender?</option>
-            <option value="auto">Mecânica automotiva</option>
-            <option value="moto">Mecânica de moto</option>
-            <option value="esp">Sou mecânico: especialização</option>
-            <option value="indeciso">Ainda não sei</option>
-          </select>
-          <button type="submit" class="btn btn-lime">Quero meu 25% OFF →</button>
-        </div>
-        <div id="heroErr"></div>
-        <p class="mf-help">🔒 Sem compromisso. Nossa equipe responde pelo WhatsApp.</p>
-      </form>
+      <div class="bh-cta">
+        <a class="btn btn-lime" href="#form" onclick="abrirFunil('hero');return false;">Quero meu 25% OFF →</a>
+        <a class="btn btn-line" href="#cursos">Ver os cursos</a>
+      </div>
+      <ul class="bh-trust">
+        <li class="g"><span class="st">★</span> 5,0 no Google · 29 avaliações</li>
+        <li>Aula prática na oficina</li>
+        <li>A partir de 14 anos</li>
+        <li>Turmas de manhã, tarde, noite e sábado</li>
+      </ul>
+    </div>
+
+    <div class="bh-art">
+      <picture><source srcset="/assets/hero-escola-recorte.webp" type="image/webp"><img src="/assets/hero-escola-recorte.webp" alt="Instrutor da Escola do Mecânico em frente à unidade Manaus" width="1500" height="781" fetchpriority="high"></picture>
+      <div class="chip c1"><b>25% OFF</b><span>em todos os cursos</span></div>
+      <div class="chip c2"><b>Aula experimental</b><span>exclusiva na oficina</span></div>
+      <div class="chip c3"><b>Do zero</b><span>ao diagnóstico</span></div>
+      <div class="chip c4"><b>Certificado</b><span>de conclusão</span></div>
+      <img class="bh-ab" src="/assets/acelera-black.png" alt="Acelera Black" width="599" height="194">
     </div>
   </div>
-  <span class="scroll-hint" aria-hidden="true"></span>
 </header>
 
 <div class="marq" aria-hidden="true"><div><span>Acelera Black</span><span>25% OFF em todos os cursos</span><span>Mecânica automotiva</span><span>Mecânica de moto</span><span>Injeção eletrônica</span><span>Elétrica, carga e partida</span><span>Motor e transmissão</span><span>Acelera Black</span><span>25% OFF em todos os cursos</span><span>Mecânica automotiva</span><span>Mecânica de moto</span><span>Injeção eletrônica</span><span>Elétrica, carga e partida</span><span>Motor e transmissão</span></div></div>
@@ -558,7 +600,7 @@ function $(id){return document.getElementById(id);}
 /* contagem regressiva */
 (function(){
   var end=new Date(BF_END).getTime();
-  document.querySelectorAll('#topEnd,#endTxt,.endTxt').forEach(function(e){e.textContent=BF_END_TXT;});
+  document.querySelectorAll('#topEnd,#heroEnd,#endTxt,.endTxt').forEach(function(e){e.textContent=BF_END_TXT;});
   function p(n){return (n<10?'0':'')+n;}
   function tick(){
     var t=end-Date.now();
