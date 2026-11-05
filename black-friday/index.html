@@ -346,7 +346,7 @@ nav{top:var(--bar)}
 .bh-trust li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime)}
 .bh-trust li.g{color:#fff;font-weight:600}.bh-trust li.g::before{display:none}.bh-trust .st{color:var(--lime)}
 .bh-txt{position:relative;z-index:3;max-width:min(32vw,430px)}
-.bh-art{position:absolute;z-index:1;right:max(22px,calc((100vw - 1360px)/2 + 22px));top:calc(50% + 54px);transform:translateY(-50%);width:min(64vw,calc((100svh - 150px)*1.38),960px);aspect-ratio:1.38;pointer-events:none}
+.bh-art{position:absolute;z-index:1;right:max(22px,calc((100vw - 1360px)/2 + 22px));top:calc(50% + 54px);transform:translateY(-50%);width:min(60vw,calc((100svh - 150px)*1.38),960px);aspect-ratio:1.38;pointer-events:none}
 .bh-art picture,.bh-art picture img{display:block;width:100%;height:100%;object-fit:cover;object-position:46% 50%}
 .bh-art picture{position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 36%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 96%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 36%,#000 94%,transparent),linear-gradient(180deg,transparent,#000 6%,#000 96%,transparent);mask-composite:intersect}
 .bh-art picture img{filter:none}
@@ -365,10 +365,9 @@ nav{top:var(--bar)}
   .bh{gap:0}
   .bh-txt{display:contents}
   .bh-tag{order:0;justify-self:start}
-  .bf-hero .bh h1{order:1;margin:16px 0 4px}
+  .bf-hero .bh h1{order:1;margin:16px 0 8px;font-size:34px}
   .bh-art{order:2;margin:0 -12px 6px;max-width:none}
-  .bh .sub,.bh .cd-label,.bh .cd,.bh-cta,.bh-trust{order:3}
-  .bh .cd-label{order:4;margin-top:18px}.bh .cd{order:5}.bh-cta{order:6}.bh-trust{order:7}
+  .bh .sub{order:3}.bh-cta{order:4}.bh-trust{order:5}
   .chip{padding:7px 10px 8px;border-radius:12px;max-width:44%;border-width:1.5px}
   .chip::after{width:10px;height:10px;bottom:-6px;left:18px}
   .chip b{font-size:15px}.chip span{font-size:10px}
@@ -378,6 +377,16 @@ nav{top:var(--bar)}
   .chip.c4::after{left:auto;right:18px}
 
 }
+
+.bf-hero .bh h1{font-size:clamp(36px,3.7vw,68px);line-height:1.05;letter-spacing:-.03em;margin:20px 0 18px;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.bf-hero .bh h1 em{font-style:normal;color:var(--lime)}
+.bh-txt{max-width:min(36vw,560px)}
+@media(max-width:900px){.bh-txt{max-width:none}}
+.bf-hero .bh .sub{font-size:clamp(16px,1.35vw,22px);max-width:30em;color:#c5d3cb}
+.cd-strip{background:linear-gradient(180deg,#0A1409,var(--bg));border-top:1px solid rgba(198,244,50,.18);border-bottom:1px solid var(--line);padding:22px 0}
+.cd-in{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap}
+.cd-strip .cd-label{margin:0}.cd-strip .cd{margin:0}
+@media(max-width:720px){.cd-in{flex-direction:column;gap:12px}.cd-strip .btn{width:100%;justify-content:center}.cd-strip .cd{width:100%}}
 </style>
 </head>
 <body>
@@ -399,19 +408,15 @@ nav{top:var(--bar)}
 <header class="hero bf-hero" id="hero">
   <div class="bh">
     <div class="bh-txt">
-      <span class="bh-tag">Unidade Manaus · oferta até <span id="heroEnd">30/11</span></span>
-      <h1><span class="big">25<small>%</small></span><span class="sm">de desconto em todos os cursos</span></h1>
-      <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e garanta 25% OFF na matrícula.</p>
-
-      <div class="cd-label">A oferta termina em</div>
-      <div class="cd" id="cd" aria-live="off"><div><b id="cdD">00</b><span>dias</span></div><div><b id="cdH">00</b><span>horas</span></div><div><b id="cdM">00</b><span>min</span></div><div><b id="cdS">00</b><span>seg</span></div></div>
-
+      <span class="bh-tag">Black Friday · Unidade Manaus</span>
+      <h1>Garanta <em>25% OFF</em> em todos os <em>cursos de mecânica.</em></h1>
+      <p class="sub">Aproveite a Acelera Black e comece agora na Escola do Mecânico. Oferta até <span id="heroEnd">30/11</span>.</p>
       <div class="bh-cta">
         <a class="btn btn-lime" href="#form" onclick="abrirFunil('hero');return false;">Quero meu 25% OFF →</a>
         <a class="btn btn-line" href="#cursos">Ver os cursos</a>
       </div>
       <ul class="bh-trust">
-        <li class="g"><span class="st">★</span> 5,0 no Google · 29 avaliações</li>
+        <li class="g"><span class="st">★</span> 5,0 no Google</li>
         <li>Aula prática na oficina</li>
         <li>A partir de 14 anos</li>
         <li>Turmas de manhã, tarde, noite e sábado</li>
@@ -427,6 +432,12 @@ nav{top:var(--bar)}
     </div>
   </div>
 </header>
+<section class="cd-strip"><div class="wrap cd-in">
+  <div class="cd-label">A oferta termina em</div>
+  <div class="cd" id="cd" aria-live="off"><div><b id="cdD">00</b><span>dias</span></div><div><b id="cdH">00</b><span>horas</span></div><div><b id="cdM">00</b><span>min</span></div><div><b id="cdS">00</b><span>seg</span></div></div>
+  <a class="btn btn-lime" href="#form" onclick="abrirFunil('contador');return false;">Garantir meu 25% OFF →</a>
+</div></section>
+
 
 <div class="marq" aria-hidden="true"><div><span>Acelera Black</span><span>25% OFF em todos os cursos</span><span>Mecânica automotiva</span><span>Mecânica de moto</span><span>Injeção eletrônica</span><span>Elétrica, carga e partida</span><span>Motor e transmissão</span><span>Acelera Black</span><span>25% OFF em todos os cursos</span><span>Mecânica automotiva</span><span>Mecânica de moto</span><span>Injeção eletrônica</span><span>Elétrica, carga e partida</span><span>Motor e transmissão</span></div></div>
 
