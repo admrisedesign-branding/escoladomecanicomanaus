@@ -332,7 +332,7 @@ nav{top:var(--bar)}
 
 /* hero em duas colunas (estrutura do hero de referência) */
 .bf-hero{display:block;text-align:left;padding:128px 0 90px}
-.bh{position:relative;z-index:3;max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:.82fr 1.28fr;gap:20px;align-items:center}
+.bh{position:relative;z-index:3;max-width:1360px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:.78fr 1.34fr;gap:20px;align-items:center}
 .bh-tag{display:inline-block;font:700 12px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);border:1px solid rgba(198,244,50,.4);border-radius:99px;padding:7px 14px}
 .bf-hero .bh h1{margin:18px 0 12px}
 .bf-hero .bh .big{font-size:clamp(84px,11vw,150px)}
@@ -345,14 +345,18 @@ nav{top:var(--bar)}
 .bh-trust li{display:flex;align-items:center;gap:6px}
 .bh-trust li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime)}
 .bh-trust li.g{color:#fff;font-weight:600}.bh-trust li.g::before{display:none}.bh-trust .st{color:var(--lime)}
-.bh-art{position:relative;padding-bottom:12%}
-.bh-art picture,.bh-art picture img{display:block;width:100%;height:auto}
-.bh-art picture{-webkit-mask-image:linear-gradient(180deg,#000 90%,transparent);mask-image:linear-gradient(180deg,#000 90%,transparent);filter:drop-shadow(0 30px 50px rgba(0,0,0,.45))}
-.bh-ab{position:absolute;left:50%;top:72%;width:38%;height:auto;transform:translateX(-50%);box-shadow:0 14px 34px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12)}
-.chip{position:absolute;background:rgba(8,16,12,.9);border:1px solid rgba(198,244,50,.5);border-radius:14px;padding:10px 14px;box-shadow:0 10px 30px rgba(0,0,0,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);max-width:34%}
-.chip b{display:block;font:800 clamp(15px,1.9vw,24px)/1.05 Sora,sans-serif;color:var(--lime)}
-.chip span{display:block;margin-top:3px;font-size:clamp(10px,1.1vw,13px);line-height:1.25;color:#d3e4dc}
-.chip.c1{left:0;top:2%}.chip.c2{right:0;top:30%}.chip.c3{left:0;top:56%}.chip.c4{right:0;top:66%}
+.bh-art{position:relative;max-width:700px;margin-left:auto;padding-bottom:7%}
+.bh-art picture,.bh-art picture img{display:block;position:relative}
+.bh-art picture{width:82%;margin:0 auto;filter:drop-shadow(0 26px 44px rgba(0,0,0,.5));-webkit-mask-image:linear-gradient(180deg,#000 88%,transparent);mask-image:linear-gradient(180deg,#000 88%,transparent)}
+.bh-art picture img{width:100%;height:auto}
+.bh-ab{position:absolute;left:50%;top:83%;width:74%;height:auto;transform:translateX(-50%);filter:drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+.chip{position:absolute;background:#060b08;border:2px solid var(--lime);border-radius:18px;padding:12px 18px 13px;box-shadow:0 0 22px rgba(198,244,50,.28),0 12px 30px rgba(0,0,0,.55);max-width:31%;z-index:2}
+.chip::after{content:"";position:absolute;width:16px;height:16px;background:#060b08;border:solid var(--lime);border-width:0 2px 2px 0;transform:rotate(45deg);bottom:-10px;left:26px}
+.chip b{display:block;font:800 clamp(16px,1.9vw,27px)/1.05 Sora,sans-serif;color:var(--lime)}
+.chip span{display:block;margin-top:5px;font-size:clamp(11px,1.15vw,15px);line-height:1.25;color:#fff}
+.chip.c1{right:-2%;top:3%}.chip.c2{right:-4%;top:28%}.chip.c3{right:-2%;top:52%}.chip.c4{left:-8%;top:44%;max-width:28%}
+.chip.c2::after,.chip.c3::after{bottom:auto;top:-10px;border-width:2px 0 0 2px;left:auto;right:30px}
+.chip.c4::after{left:auto;right:30px}
 @media(max-width:900px){.bh{grid-template-columns:1fr;gap:26px}.bf-hero{padding:120px 0 60px}.bf-hero .bh .sub{max-width:none}}
 @media(max-width:720px){
   .bh{padding:0 20px}
@@ -362,14 +366,17 @@ nav{top:var(--bar)}
   .bh-txt{display:contents}
   .bh-tag{order:0;justify-self:start}
   .bf-hero .bh h1{order:1;margin:16px 0 4px}
-  .bh-art{order:2;margin:0 -14px 6px;padding-bottom:13%}
+  .bh-art{order:2;margin:0 auto 6px;padding-bottom:8%;max-width:420px}
   .bh .sub,.bh .cd-label,.bh .cd,.bh-cta,.bh-trust{order:3}
   .bh .cd-label{order:4;margin-top:18px}.bh .cd{order:5}.bh-cta{order:6}.bh-trust{order:7}
-  .chip{padding:7px 10px;border-radius:11px;max-width:42%}
-  .chip b{font-size:14px}.chip span{font-size:10px}
-  .chip.c2,.chip.c4{display:none}
-  .chip.c1{top:0}.chip.c3{top:52%}
-  .bh-ab{width:58%}
+  .chip{padding:7px 10px 8px;border-radius:12px;max-width:44%;border-width:1.5px}
+  .chip::after{width:10px;height:10px;bottom:-6px;left:18px}
+  .chip b{font-size:15px}.chip span{font-size:10px}
+  .chip.c1,.chip.c3{display:none}
+  .chip.c2{top:8%;right:-4%;max-width:44%}.chip.c4{left:-4%;top:46%}
+  .chip.c2::after{right:auto;left:auto;right:16px}
+  .chip.c4::after{left:auto;right:18px}
+  .bh-ab{width:84%;top:80%}
 }
 </style>
 </head>
@@ -412,12 +419,12 @@ nav{top:var(--bar)}
     </div>
 
     <div class="bh-art">
-      <picture><source srcset="/assets/hero-escola-recorte.webp" type="image/webp"><img src="/assets/hero-escola-recorte.webp" alt="Instrutor da Escola do Mecânico em frente à unidade Manaus" width="1500" height="781" fetchpriority="high"></picture>
-      <div class="chip c1"><b>25% OFF</b><span>em todos os cursos</span></div>
-      <div class="chip c2"><b>Aula experimental</b><span>exclusiva na oficina</span></div>
-      <div class="chip c3"><b>Do zero</b><span>ao diagnóstico</span></div>
-      <div class="chip c4"><b>Certificado</b><span>de conclusão</span></div>
-      <img class="bh-ab" src="/assets/acelera-black.png" alt="Acelera Black" width="599" height="194">
+      <picture><img src="/assets/hero-escola-aluno.webp" alt="Instrutor da Escola do Mecânico em frente à unidade Manaus" width="1000" height="1143" fetchpriority="high"></picture>
+      <div class="chip c1"><b>25%</b><span>de desconto em todos os cursos</span></div>
+      <div class="chip c2"><b>Aula prática</b><span>na oficina, com instrutor do lado</span></div>
+      <div class="chip c3"><b>Carro e moto</b><span>do zero à especialização</span></div>
+      <div class="chip c4"><b>Banco de vagas</b><span>Emprega Mecânico</span></div>
+      <img class="bh-ab" src="/assets/acelera-black-logo.png" alt="Acelera Black" width="1200" height="153">
     </div>
   </div>
 </header>
