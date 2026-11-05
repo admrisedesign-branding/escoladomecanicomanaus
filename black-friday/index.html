@@ -186,7 +186,7 @@ section.light{background:var(--light);color:var(--lt-ink)}
 .f input{width:100%;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:10px;padding:13px 14px;color:var(--ink);font:500 15px Inter,sans-serif;outline:none}
 .f input:focus{border-color:var(--teal)}
 .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--mut);margin-bottom:16px}.consent input{margin-top:3px;accent-color:var(--lime)}
-.row{display:flex;gap:10px}.row .btn:last-child{flex:1}
+.row{display:flex;gap:10px}.row .btn{min-width:0;white-space:normal;padding-left:16px;padding-right:16px}.row .btn:last-child{flex:1}
 .skip{display:block;text-align:center;margin-top:14px;color:var(--mut);font-size:13px;cursor:pointer;text-decoration:underline}
 .ok{display:none;text-align:center;padding:10px 0}.ok .big{font-size:44px}.ok h3{margin:10px 0}.ok p{color:var(--mut);margin-bottom:18px}
 
@@ -314,6 +314,17 @@ nav{top:var(--bar)}
   .offer-box{min-width:0;padding:18px 22px 20px}
   .offer-bar{width:9px}
 }
+
+.gscore{display:inline-flex;align-items:center;gap:8px;font:600 14px Inter,sans-serif;color:#E8F3EE;margin:0 0 18px}
+.gscore .st{color:var(--lime);letter-spacing:2px}
+.rev-head{display:flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:8px}
+.rev-big{font:800 56px/1 Sora,sans-serif;color:var(--lime)}
+.rev .card p{font-size:16px;line-height:1.55;color:#E8F3EE}
+.rev .card .who{margin-top:14px;font:600 13px Inter,sans-serif;color:#9DB8AD;display:flex;align-items:center;gap:8px}
+.rev .card .st{color:var(--lime);letter-spacing:2px;font-size:14px;margin-bottom:10px;display:block}
+.gnote{text-align:center;font-size:13px;color:#9DB8AD;margin-top:14px}
+.fach{margin-top:34px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.fach img{display:block;width:100%;height:clamp(240px,40vw,460px);object-fit:cover;object-position:center 45%}
 </style>
 </head>
 <body>
@@ -336,7 +347,8 @@ nav{top:var(--bar)}
   <div class="hero-in">
     <div class="ab ab-lg" aria-label="Acelera Black">Acelera <em>Black</em><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 0l9 5-9 5z"/></svg></div>
     <h1><span class="big">25<small>%</small></span><span class="sm">de desconto em todos os cursos</span></h1>
-    <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e garante 25% OFF na matrícula.</p>
+    <p class="sub">Mecânica de carro e moto do zero, ou especialização para quem já é mecânico. Aprenda na oficina, com instrutor do lado, e garanta 25% OFF na matrícula.</p>
+    <div class="gscore"><span class="st">★★★★★</span> 5,0 no Google · 29 avaliações</div>
 
     <div class="cd-label">A oferta termina em</div>
     <div class="cd" id="cd" aria-live="off"><div><b id="cdD">00</b><span>dias</span></div><div><b id="cdH">00</b><span>horas</span></div><div><b id="cdM">00</b><span>min</span></div><div><b id="cdS">00</b><span>seg</span></div></div>
@@ -407,6 +419,18 @@ nav{top:var(--bar)}
     <li>Turmas de manhã, tarde, noite e sábado.</li>
     <li>Quem começa do zero é bem-vindo: a maioria chega sem nunca ter mexido em um motor.</li>
   </ul>
+</div></section>
+
+<section id="avaliacoes" class="rev"><div class="wrap">
+  <div class="head rv"><span class="tag">Quem já estuda aqui</span><h2>Nota <i class="grad">5,0</i> no Google.</h2></div>
+  <div class="rev-head rv"><span class="st" style="color:var(--lime);letter-spacing:4px;font-size:22px">★★★★★</span><span style="font:600 15px Inter,sans-serif;color:#E8F3EE">29 avaliações no Google</span></div>
+  <div class="grid g3" style="margin-top:26px">
+    <div class="card rv"><span class="st">★★★★★</span><p>“Professores atenciosos, aulas práticas e um ambiente muito bom para aprender.”</p><div class="who">Amazonia Craveiro · avaliação no Google</div></div>
+    <div class="card rv"><span class="st">★★★★★</span><p>“Ótimo método de ensino! Super indico para quem procura conhecimento e aprovação no mercado automotivo.”</p><div class="who">Elexsandro Lobato · avaliação no Google</div></div>
+    <div class="card rv"><span class="st">★★★★★</span><p>“Sou aluno e recomendo pra todos que buscam conhecimento e que querem crescer como profissional.”</p><div class="who">Atila Jose · avaliação no Google</div></div>
+  </div>
+  <p class="gnote rv">Avaliações públicas de alunos no Google Maps.</p>
+  <div class="fach rv"><picture><source srcset="/assets/unidade.webp" type="image/webp"><img src="/assets/unidade.jpg" alt="Fachada da Escola do Mecânico, unidade Manaus, na Av. Margarita" loading="lazy" width="1672" height="941"></picture></div>
 </div></section>
 
 <section id="faq" class="alt"><div class="wrap">
